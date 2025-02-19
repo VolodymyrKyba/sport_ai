@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Bebas Neue&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.main {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  height: 100vh;
+}
+.left_bar {
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+  height: 100vh;
+
+  background-color: rgb(255, 255, 255);
+}
+.right_bar {
+  background: radial-gradient(#ff0000 1%, #830000 69%);
+}
+.center_bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  margin-top: 1em;
+  display: grid;
+  grid-template-columns: 10% 20% 70%;
+  height: 100vh;
+  width: 100%;
+  height: 5em;
+  font-size: 35px;
+  padding-left: 1em;
+  font-family: Bebas Neue;
+}
+.pdf {
+  display: flex;
+  padding-left: 3em;
+  font-family: Bebas Neue;
+}
+.info {
+  display: grid;
+  grid-template-rows: 50% 30% 20%;
+  height: 100vh;
+  width: 800px;
+  height: 600px;
+  margin-left: 20em;
+  margin-right: 20em;
+}
+.big_word {
+  text-align: left;
+  display: block;
+}
+.big_word > p {
+  font-family: Bebas Neue;
+  padding: 15px;
+  font-size: 110px;
+}
+.small_word {
+  display: block;
+}
+.small_word > p {
+  padding: 15px;
+  font-size: 30px;
+}
+.btn {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.ai_btn {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.inpt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ai_btn > button {
+  border-style: solid;
+  font-size: 50px;
+  padding: 0.4em;
+  color: aliceblue;
+  background-color: black;
+  cursor: pointer;
+}
+.ai_btn > button:hover {
+  background-color: rgb(59, 59, 59);
+}
+.inpt > input {
+  height: 96px;
+  width: 350px;
+  font-size: 50px;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+}
+.img_d {
+    position: fixed;  
+    top: 100px;  /* Distance from the top */
+    left: 1200px;  /* Distance from the left */
+    width: 20vw;  /* 10% of the viewport width (scales when zooming) */
+    height: auto;  /* Maintain aspect ratio */
+    z-index: 1000;  /* Keeps it above other elements */
+}
+.down{
+    display: block;
+
+}
+.down > p {
+    padding-inline: 15px;
+    font-family: Bebas Neue;
+    font-size: 30px;
+
+}

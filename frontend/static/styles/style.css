@@ -25,24 +25,33 @@
   align-items: center;
 }
 header {
-  margin-top: 1em;
+  /* margin-top: 1em; */
   display: grid;
   grid-template-columns: 10% 20% 70%;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100%;
-  height: 5em;
+  /* height: 5em; */
   font-size: 35px;
   padding-left: 1em;
   font-family: Bebas Neue;
+  border-bottom-style: dashed;
 }
 .pdf {
-  display: flex;
-  padding-left: 3em;
+  display: grid;
+  place-items: center;
   font-family: Bebas Neue;
+  font-size: 1.4em;
+}
+.pdf > a {
+  color: black;
+  text-decoration: none;
+}
+.pdf > a:hover {
+  color: rgb(59, 59, 59);
 }
 .info {
   display: grid;
-  grid-template-rows: 50% 30% 20%;
+  grid-template-rows: 45% 30% 20%;
   height: 100vh;
   width: 800px;
   height: 600px;
@@ -55,19 +64,20 @@ header {
 }
 .big_word > p {
   font-family: Bebas Neue;
-  padding: 15px;
+  /* padding: 15px; */
   font-size: 110px;
 }
 .small_word {
   display: block;
 }
 .small_word > p {
-  padding: 15px;
   font-size: 30px;
+  /* padding-left: 15px; */
 }
 .btn {
   display: grid;
   grid-template-columns: 50% 50%;
+  margin-top: 30px;
 }
 .ai_btn {
   display: flex;
@@ -91,28 +101,36 @@ header {
   background-color: rgb(59, 59, 59);
 }
 .inpt > input {
-  height: 96px;
+  height: 90px;
   width: 350px;
   font-size: 50px;
   color: black;
   text-align: center;
   cursor: pointer;
+  border-style: dashed;
+  border-width: 5px;
+  border-color: black;
+  outline: none;
+  font-family: Bebas Neue;
+  margin-right: 40px;
+}
+.inpt > input:hover {
+  /* background-color: rgb(193, 193, 193); */
+  border-style: dotted;
 }
 .img_d {
-    position: fixed;  
-    top: 100px;  /* Distance from the top */
-    left: 1200px;  /* Distance from the left */
-    width: 20vw;  /* 10% of the viewport width (scales when zooming) */
-    height: auto;  /* Maintain aspect ratio */
-    z-index: 1000;  /* Keeps it above other elements */
+  position: fixed;
+  top: 100px; /* Distance from the top */
+  left: 1000px; /* Distance from the left */
+  width: 45vw; /* 10% of the viewport width (scales when zooming) */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 1000; /* Keeps it above other elements */
 }
-.down{
-    display: block;
-
+.down {
+  display: block;
 }
 .down > p {
-    padding-inline: 15px;
-    font-family: Bebas Neue;
-    font-size: 30px;
-
+  padding-inline: 15px;
+  font-family: Bebas Neue;
+  font-size: 30px;
 }

@@ -25,22 +25,19 @@
   align-items: center;
 }
 header {
-  /* margin-top: 1em; */
   display: grid;
   grid-template-columns: 10% 20% 70%;
-  /* height: 100vh; */
   width: 100%;
-  /* height: 5em; */
   font-size: 35px;
-  padding-left: 1em;
   font-family: Bebas Neue;
-  border-bottom-style: dashed;
+  /* border-bottom-style: dashed; */
 }
 .pdf {
+  padding-top: 8px;
   display: grid;
   place-items: center;
   font-family: Bebas Neue;
-  font-size: 1.4em;
+  font-size: 35px;
 }
 .pdf > a {
   color: black;
@@ -66,6 +63,9 @@ header {
   font-family: Bebas Neue;
   /* padding: 15px; */
   font-size: 110px;
+}
+.bss {
+  color: #858585;
 }
 .small_word {
   display: block;
@@ -120,7 +120,7 @@ header {
 }
 .img_d {
   position: fixed;
-  top: 100px; /* Distance from the top */
+  top: 80px; /* Distance from the top */
   left: 1000px; /* Distance from the left */
   width: 45vw; /* 10% of the viewport width (scales when zooming) */
   height: auto; /* Maintain aspect ratio */
@@ -133,4 +133,20 @@ header {
   padding-inline: 15px;
   font-family: Bebas Neue;
   font-size: 30px;
+}
+.right_bar {
+  display: block;
+  text-align: right;
+}
+.cont {
+  height: 69px;
+  padding-top: 1.5em;
+  padding-right: 1.3em;
+}
+.cont > a {
+  font-family: Bebas Neue;
+  font-size: 35px;
+  color: aliceblue;
+  text-decoration: none;
+  padding-top: 1em;
 }

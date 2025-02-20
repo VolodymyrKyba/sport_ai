@@ -8,9 +8,14 @@
       rel="stylesheet"
       href="/home/volodymyrkyba/work/sport_ai/frontend/static/styles/style.css"
     />
+    <script
+      src="/home/volodymyrkyba/work/sport_ai/frontend/script.js"
+      defer
+    ></script>
   </head>
 
   <body>
+    <p id="response"></p>
     <div class="main">
       <img
         class="img_d"
@@ -25,13 +30,13 @@
           </div>
           <div class="pdf"><a href="">Examples</a></div>
           <div class="pdf">
-            <p>Download pdf</p>
+            <p>Download PDF</p>
           </div>
         </header>
         <div class="center_bar">
           <div class="info">
             <div class="big_word">
-              <p>Impress your friends or your boss!</p>
+              <p>Impress your friends or your <span class="bss">boss!</span></p>
             </div>
             <div class="small_word">
               <p>
@@ -44,24 +49,33 @@
 
             <div class="btn">
               <div class="ai_btn">
-                <button>Get Predict</button>
+                <button id="submitBtn">Get Info</button>
               </div>
               <div class="inpt">
-                <input type="text" placeholder="Your team" />
+                <input
+                  type="text"
+                  id="nameinput"
+                  placeholder="Your team"
+                  required
+                />
               </div>
             </div>
           </div>
         </div>
 
         <div class="down">
-          <p>
+          <!-- <p>
             Terms & Conditions Privacy & Cookies Notice Privacy Options
             Accessibility Information Contact Us
-          </p>
+          </p> -->
         </div>
       </div>
 
-      <div class="right_bar">Rightfsdf</div>
+      <div class="right_bar">
+        <div class="cont">
+          <a href="">Contact</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>

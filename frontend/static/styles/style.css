@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Bebas Neue&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 * {
   margin: 0;
   padding: 0;
+}
+body {
+  display: block;
 }
 .main {
   display: grid;
@@ -118,25 +122,11 @@ header {
   /* background-color: rgb(193, 193, 193); */
   border-style: dotted;
 }
-.img_d {
-  position: fixed;
-  top: 80px; /* Distance from the top */
-  left: 1000px; /* Distance from the left */
-  width: 45vw; /* 10% of the viewport width (scales when zooming) */
-  height: auto; /* Maintain aspect ratio */
-  z-index: 1000; /* Keeps it above other elements */
-}
-.down {
-  display: block;
-}
-.down > p {
-  padding-inline: 15px;
-  font-family: Bebas Neue;
-  font-size: 30px;
-}
+
 .right_bar {
   display: block;
   text-align: right;
+  height: 100vh;
 }
 .cont {
   height: 69px;
@@ -149,4 +139,38 @@ header {
   color: aliceblue;
   text-decoration: none;
   padding-top: 1em;
+}
+.img_d {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.img_dd {
+  padding-right: 400px;
+  width: 800px;
+}
+.bottom {
+  display: grid;
+  grid-template-rows: 10% 90%;
+}
+.team_name {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.team_name > p {
+  font-family: Bebas Neue;
+  font-size: 65px;
+}
+.answer {
+  display: block;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+.answer > p {
+  font-size: 30px;
+  font-family: Roboto;
+  padding: 15px;
+  font-weight: bold;
 }

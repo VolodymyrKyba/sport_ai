@@ -33,7 +33,7 @@ def get_team_info(team):
                 - Fun Facts
                 - Celebrity Gossip
                 - Workplace Drama
-                - Funny Metaphors
+                - Funny Metaphors 
                 """,
             }
         ],

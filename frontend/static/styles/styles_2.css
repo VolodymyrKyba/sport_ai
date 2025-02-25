@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Bebas Neue&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  width: 100%;
+  display: inline-flex;
+  position: fixed;
+  justify-content: space-between;
+  background-color: aliceblue;
+}
+.page {
+  display: flex;
+  margin-inline: 10em;
+}
+.page > p {
+  font-family: Roboto;
+  font-size: 17px;
+}
+
+.video_block {
+  display: block;
+  background-color: rgb(209, 209, 209);
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.video {
+  position: absolute;
+  width: 200px;
+
+  object-fit: cover;
+}
+.info {
+  display: flex;
+  position: absolute;
+  top: 1000px;
+  left: 300px;
+  width: 1200px;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 100vh;
+  border-radius: 60px;
+  text-align: center;
+  justify-content: center;
+}
+.info > p {
+  margin: 30px;
+  font-family: Bebas Neue;
+  font-size: 60px;
+}

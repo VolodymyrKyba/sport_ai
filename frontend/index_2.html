@@ -8,33 +8,44 @@
       rel="stylesheet"
       href="/home/volodymyrkyba/work/sport_ai/frontend/static/styles/styles_2.css"
     />
+    <script
+      src="/home/volodymyrkyba/work/sport_ai/frontend/script.js"
+      defer
+    ></script>
   </head>
   <body>
     <header>
-      <div class="page"><p>Main</p></div>
-      <div class="page"><p>Examples</p></div>
-      <div class="page"><p>Technologies</p></div>
-      <div class="page"><p>Download PDF</p></div>
+      <div class="page"><a href="#">Main</a></div>
+      <div class="page"><a href="#">Examples</a></div>
+      <div class="page"><a href="#">Technologies</a></div>
+      <div class="page"><a href="#">Download PDF</a></div>
     </header>
-
     <div class="video_block">
       <video
         autoplay
         loop
         muted
         playsinline
-        src="/home/volodymyrkyba/work/sport_ai/frontend/static/videos/6077718-uhd_3840_2160_25fps.mp4"
+        src="/home/volodymyrkyba/work/sport_ai/frontend/static/videos/Karamoola - Kalpoor Premier League 2021 (KKPL-2021) Football Promo Video (1).mp4"
       ></video>
     </div>
-    <div class="main">
-      <div class="next-section">
-        <p class="big_word">Impress your boss!</p>
-        <p class="small_word">
-          Just name your favorite team, and I’ll give you all the latest stats,
-          history, and key insights you need to feel confident in any
-          discussion, whether you're chatting with friends or debating with
-          experts!
-        </p>
+    <div class="next-section">
+      <div class="big_word">
+        <p cl>Sport AI</p>
+      </div>
+      <div class="small_word">
+        <p class="tt">Just name your favorite team</p>
+      </div>
+      <div class="btn">
+        <div class="ai_btn">
+          <button id="submitBtn">Push</button>
+        </div>
+        <div class="inpt">
+          <input type="text" id="nameinput" placeholder="Your team" required />
+        </div>
+      </div>
+      <div class="answer">
+        <p id="response"></p>
       </div>
     </div>
     <script

@@ -12,8 +12,22 @@
       src="/home/volodymyrkyba/work/sport_ai/frontend/script.js"
       defer
     ></script>
+    <script
+      src="https://kit.fontawesome.com/your-fontawesome-kit.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
+    <button id="video_btn" onclick="togglePlayPause()">
+      <img
+        id="playPauseImg"
+        src="/home/volodymyrkyba/work/sport_ai/frontend/static/images/pause.png"
+        alt="Pause"
+      />
+    </button>
+    <!-- &#9616 -->
+    <!-- &#9658 -->
+    <script src="/home/volodymyrkyba/work/sport_ai/frontend/pause_video.js"></script>
     <header>
       <div class="page"><a href="#">Main</a></div>
       <div class="page"><a href="#">Examples</a></div>
@@ -22,6 +36,7 @@
     </header>
     <div class="video_block">
       <video
+        id="back_video"
         autoplay
         loop
         muted
@@ -29,19 +44,27 @@
         src="/home/volodymyrkyba/work/sport_ai/frontend/static/videos/Karamoola - Kalpoor Premier League 2021 (KKPL-2021) Football Promo Video (1).mp4"
       ></video>
     </div>
+    <script src=""></script>
     <div class="next-section">
-      <div class="big_word">
-        <p cl>Sport AI</p>
-      </div>
-      <div class="small_word">
-        <p class="tt">Just name your favorite team</p>
-      </div>
-      <div class="btn">
-        <div class="ai_btn">
-          <button id="submitBtn">Push</button>
+      <div class="info">
+        <div class="big_word">
+          <p cl>Sport AI</p>
         </div>
-        <div class="inpt">
-          <input type="text" id="nameinput" placeholder="Your team" required />
+        <div class="small_word">
+          <p class="tt">Just name your favorite team</p>
+        </div>
+        <div class="btn">
+          <div class="ai_btn">
+            <button id="submitBtn">Push</button>
+          </div>
+          <div class="inpt">
+            <input
+              type="text"
+              id="nameinput"
+              placeholder="Your team"
+              required
+            />
+          </div>
         </div>
       </div>
       <div class="answer">

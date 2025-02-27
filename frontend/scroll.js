@@ -9,7 +9,7 @@ gsap
       start: "top 80%",
       end: "top 30%",
       toggleActions: "restart none none reverse",
-      scrub: 1.5,
+      scrub: 2,
       markers: true,
     },
   })
@@ -17,7 +17,8 @@ gsap
     width: "100%",
     scale: 1.9,
     backgroundColor: "white",
-    duration: 0.5,
+    duration: 2.0,
+    height: "400vh",
     // height: "auto",
   });
 // gsap.to(".tt", {

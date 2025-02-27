@@ -61,17 +61,23 @@ video {
 .next-section {
   display: flex;
   flex-direction: column;
-  height: 200vh;
+  height: 150vh;
   width: 60%;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   top: 75vh;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.7);
   border-top-left-radius: 60px;
   border-top-right-radius: 60px;
   align-items: center;
-  padding: 10px;
+  /* padding: 10px; */
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
 }
 .big_word {
   margin: 0;
@@ -141,14 +147,35 @@ video {
   background-color: black;
 }
 .answer {
-  display: block;
-  padding-left: 300px;
-  padding-right: 300px;
+  display: flex;
+  width: 40%;
 }
 
 .answer > p {
-  font-size: 30px;
+  margin-top: 600px;
+  font-size: 16px;
   font-family: Roboto;
   padding: 15px;
   font-weight: bold;
+}
+#video_btn {
+  width: 60px;
+  height: 60px;
+  font-size: 10px;
+  position: absolute;
+  color: black;
+  top: 100px;
+  right: 70px;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  border-style: none;
+  border-radius: 50%;
+  /* padding-left: 0px; */
+  padding-top: 3px;
+}
+#playPauseImg {
+  width: 30px;
+}
+#video_btn:hover {
+  background-color: rgb(255, 255, 255);
 }

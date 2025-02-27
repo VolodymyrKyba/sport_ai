@@ -19,11 +19,9 @@ gsap
     backgroundColor: "white",
     duration: 2.0,
     height: "400vh",
-    // height: "auto",
   });
-// gsap.to(".tt", {
-//   fontSize: "45px",
-//   scale: 0.8,
+// .from(container, {
+//   opacity: 0, // Fade in content as it appears.
 //   duration: 1,
-//   transformOrigin: "center center",
+//   ease: "power1.out",
 // });

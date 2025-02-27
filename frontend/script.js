@@ -12,11 +12,19 @@ document.addEventListener("DOMContentLoaded", function () {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name: userName }), // Send input as JSON
+      body: JSON.stringify({ name: userName }),
     })
-      .then((response) => response.json()) // Convert response to JSON
+      .then((response) => response.json())
       .then((data) => {
-        document.getElementById("response").innerText = data.message; // Display response
+        document.getElementById("response").innerText = data.message;
+
+        const logoUrl = data.logo_url;
+
+        if (logoUrl) {
+          const logoElement = document.getElementById("logoImage");
+          logoElement.src = logoUrl;
+          logoElement.alt = `${userName} Logo`;
+        }
       })
       .catch((error) => console.error("Error:", error));
   });

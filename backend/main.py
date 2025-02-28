@@ -18,7 +18,7 @@ app.add_middleware(
 class UserInput(BaseModel):
     name: str = Field(..., example="Johsdn")
 
-def get_team_info(team):
+def get_team_ai_info(team):
 
         chat_completion = client.chat.completions.create(
         messages=[
@@ -34,7 +34,7 @@ def get_team_info(team):
                 - Latest News
                 - Talking Points
                 - Fun Facts
-                - Celebrity Gossip
+                - Slogan
                 - Workplace Drama
                 - Funny Metaphors 
                 """,
@@ -102,7 +102,32 @@ def get_team_info(team):
 # )
 #     return team_desc.choices[0].message.content
 
-def take_logo(team):
+# def take_logo(team):
+#     url = f"https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t={team}"
+    
+#     response = requests.get(url)
+        
+#     if response.status_code == 200:
+#         data = response.json()
+#         if data.get("teams"):
+#             return data["teams"][0].get("strBadge")
+#     return None
+
+
+
+
+
+def get_last_5_games (team_id):
+    url =f"https://www.thesportsdb.com/api/v1/json/3/eventslast.php?id={team_id}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        if data.get("results"):
+            info = data["results"]
+            for match in info:
+                print(f"""{match.get('dateEventLocal')},{match.get('strHomeTeam')},{match.get('intHomeScore')},{match.get('intAwayScore')},{match.get('strAwayTeam')},""")
+
+def get_team_api_info(team):
     url = f"https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t={team}"
     
     response = requests.get(url)
@@ -110,8 +135,10 @@ def take_logo(team):
     if response.status_code == 200:
         data = response.json()
         if data.get("teams"):
-            return data["teams"][0].get("strBadge")
-    return None
+            info = data["teams"][0]
+            id_Team = info.get("idTeam")
+            team_Logo = info.get("strBadge")
+    return id_Team , team_Logo
 
 def beautify_text(text):
     replacements = {
@@ -120,7 +147,7 @@ def beautify_text(text):
         "**Latest News**": "📰 Latest News",
         "**Talking Points**": "💬 Talking Points",
         "**Fun Facts**": "🎉 Fun Facts",
-        "**Celebrity Gossip**": "🌟 Celebrity Gossip",
+        "**Slogan**": "🌟 Slogan",
         "**Workplace Drama**": "🎭 Workplace Drama",
         "**Funny Metaphors**": "😂 Funny Metaphors"
     }
@@ -132,11 +159,15 @@ def beautify_text(text):
 @app.post("/submit")
 async def receive_name(user: UserInput):
     team = user.name
-    logo_url = take_logo(team)
-    team_info = get_team_info(team)
+    team_id, logo_url = get_team_api_info(team)
+    team_info = get_team_ai_info(team)
     team_info = beautify_text(team_info)
-    print(team_info)
-    print(logo_url)
+    team_events = get_last_5_games(team_id)
+
+    # print(team_events)
+    # print(team_id)
+    # print(team_info)
+    # print(logo_url)
     
     return JSONResponse(content={
         "message": team_info,

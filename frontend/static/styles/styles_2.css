@@ -149,21 +149,24 @@ video {
 .answer {
   margin-top: 20px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 40%;
-  border-style: solid;
-  border-color: black;
-  border-radius: 60px;
-  background-color: black;
+  /* border-style: solid;
+  border-color: rgb(255, 255, 255);
+  border-radius: 60px; */
+  background-color: rgb(255, 255, 255);
 }
 
 .answer > p {
-  text-align: center;
+  text-align: left;
   margin-top: 50px;
   font-size: 13px;
   font-family: Roboto;
   padding: 15px;
   font-weight: bold;
-  color: aliceblue;
+  color: rgb(0, 0, 0);
 }
 #video_btn {
   width: 60px;
@@ -195,4 +198,13 @@ video {
 }
 .logo > img {
   width: 400px;
+}
+.banner {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.banner > img {
+  width: 100%;
 }

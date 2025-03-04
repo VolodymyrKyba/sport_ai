@@ -18,12 +18,35 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((data) => {
         document.getElementById("response").innerText = data.message;
 
-        const logoUrl = data.logo_url;
+        const banner_Url = data.banner_url;
 
-        if (logoUrl) {
+        if (banner_Url) {
+          const banner_Element = document.getElementById("bannerImage");
+          banner_Element.src = banner_Url;
+        }
+        const formUrl = data.unifrom_url;
+
+        if (formUrl) {
+          const formElement = document.getElementById("uniform");
+          formElement.src = formUrl;
+        }
+        const logo_Url = data.logo;
+
+        if (logo_Url) {
           const logoElement = document.getElementById("logoImage");
-          logoElement.src = logoUrl;
-          logoElement.alt = `${userName} Logo`;
+          logoElement.src = logo_Url;
+        }
+
+        const nickName = data.nick_name;
+
+        if (nickName) {
+          document.getElementById("nickNameDisplay").innerText = nickName;
+        }
+
+        const l_5_events = data.last_5_events;
+
+        if (l_5_events) {
+          document.getElementById("l_5_events").innerHTML = l_5_events;
         }
       })
       .catch((error) => console.error("Error:", error));

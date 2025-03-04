@@ -48,6 +48,44 @@ document.addEventListener("DOMContentLoaded", function () {
         if (l_5_events) {
           document.getElementById("l_5_events").innerHTML = l_5_events;
         }
+
+        const teamYear = data.team_year;
+
+        if (teamYear) {
+          document.getElementById("year").innerText = teamYear;
+        }
+        const teamWeb = data.team_website;
+
+        if (teamWeb) {
+          document.getElementById("website").href = teamWeb.startsWith("http")
+            ? teamWeb
+            : "https://" + teamWeb;
+        }
+        const teamFace = data.team_facebook;
+
+        if (teamFace) {
+          document.getElementById("facebook").href = teamFace.startsWith("http")
+            ? teamFace
+            : "https://" + teamFace;
+        }
+
+        const teamTwit = data.team_twitter;
+
+        if (teamTwit) {
+          document.getElementById("twitter").href = teamTwit.startsWith("http")
+            ? teamTwit
+            : "https://" + teamTwit;
+        }
+
+        const teamInst = data.team_inst;
+
+        if (teamInst) {
+          document.getElementById("instagram").href = teamInst.startsWith(
+            "http"
+          )
+            ? teamInst
+            : "https://" + teamInst;
+        }
       })
       .catch((error) => console.error("Error:", error));
   });

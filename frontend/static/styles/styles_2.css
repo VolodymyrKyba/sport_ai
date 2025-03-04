@@ -150,6 +150,7 @@ video {
 }
 .answer {
   margin-top: 20px;
+  padding: 20px;
   display: grid;
   grid-template-columns: 30% 70%;
   border-radius: 60px;
@@ -235,7 +236,7 @@ video {
   display: flex;
   width: 50%;
   justify-content: center;
-  margin-top: 300px;
+  margin-top: 500px;
 }
 .banner > img {
   border-radius: 100px;
@@ -246,6 +247,8 @@ video {
 }
 #year {
   text-align: center;
+  font-family: Teko;
+  font-size: 30px;
 }
 .name {
   display: flex;
@@ -256,7 +259,7 @@ video {
   align-items: center;
 }
 .name > p {
-  font-size: 60px;
+  font-size: 40px;
   font-family: Sigmar;
 }
 .ai_info {
@@ -297,11 +300,21 @@ td {
   font-size: 12px;
   color: #333;
 }
+.site_bar {
+  justify-content: center;
+  align-items: center;
 
-/* tr:hover {
-  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
-
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-} */
+.site_bar > a {
+  /* padding: px; */
+  font-family: Roboto;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+.site_bar > a:hover {
+  color: #414141;
+}

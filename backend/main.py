@@ -146,7 +146,12 @@ def get_team_api_info(team):
             team_banner = info.get("strBanner")
             team_uniform = info.get("strEquipment")
             team_name = info.get("strTeam")
-    return id_Team , team_Logo , team_banner ,team_uniform , team_name
+            team_year = info.get("intFormedYear")
+            team_website = info.get("strWebsite")
+            team_facebook = info.get("strFacebook")
+            team_twitter = info.get("strTwitter")
+            team_inst = info.get("strInstagram")
+    return id_Team , team_Logo , team_banner ,team_uniform , team_name ,team_year,team_website,team_facebook,team_twitter,team_inst
 
 def beautify_text(text):
     replacements = {
@@ -167,7 +172,7 @@ def beautify_text(text):
 @app.post("/submit")
 async def receive_name(user: UserInput):
     team = user.name
-    team_id, logo_url ,team_banner , team_uniform ,team_name= get_team_api_info(team)
+    team_id, logo_url ,team_banner , team_uniform ,team_name ,team_year,team_website,team_facebook,team_twitter,team_inst =  get_team_api_info(team)
     team_info = get_team_ai_info(team)
     team_info = beautify_text(team_info)
     team_l_5_events = get_last_5_games(team_id)
@@ -185,7 +190,11 @@ async def receive_name(user: UserInput):
         "logo" : logo_url,
         "nick_name" : team_name,
         "last_5_events" : team_l_5_events,
-        
+        "team_year" : team_year,
+        "team_website" : team_website,
+        "team_facebook" : team_facebook,
+        "team_twitter" : team_twitter,
+        "team_inst" : team_inst,
     })
 
 if __name__ == "__main__":

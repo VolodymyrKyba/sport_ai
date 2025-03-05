@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then((response) => response.json())
       .then((data) => {
-        document.getElementById("response").innerText = data.message;
+        document.getElementById("response").innerHTML = data.message;
 
         const banner_Url = data.banner_url;
 

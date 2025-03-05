@@ -29,13 +29,22 @@ def get_team_ai_info(team):
             {
                 "role": "user",
                 "content": f"""Give me short information about this team {team} in this format:
-                - Current standings
-                - Latest News
-                - Talking Points
-                - Fun Facts
-                - Slogan
-                - Workplace Drama
-                - Funny Metaphors 
+
+                Information:
+                -Current standings: 
+                info
+                -Latest News: 
+                info
+                -Talking Points: 
+                info
+                -Fun Facts: 
+                info
+                -Slogan:
+                info
+                -Workplace Drama:
+                info
+                -Funny Metaphors: 
+                info
                 """,
             }
         ],
@@ -146,7 +155,7 @@ def get_team_api_info(team):
             team_banner = info.get("strBanner")
             team_uniform = info.get("strEquipment")
             team_name = info.get("strTeam")
-            team_year = info.get("intFormedYear")
+            team_year = f"<< {info.get("intFormedYear")} >>"
             team_website = info.get("strWebsite")
             team_facebook = info.get("strFacebook")
             team_twitter = info.get("strTwitter")
@@ -155,15 +164,15 @@ def get_team_api_info(team):
 
 def beautify_text(text):
     replacements = {
-        "**Current standings**": "📊 Current Standings",
-        "**Latest News**": "📰 Latest News",
-        "**Talking Points**": "💬 Talking Points",
-        "**Fun Facts**": "🎉 Fun Facts",
-        "**Slogan**": "🌟 Slogan",
-        "**Workplace Drama**": "🎭 Workplace Drama",
-        "**Funny Metaphors**": "😂 Funny Metaphors"
+        "Information:": "<h1>📖 Information about your team ",
+        "-Current standings:": "<h3>📊  Current Standings:</h3>",
+        "-Latest News:": "<h3>📰  Latest News:</h3>",
+        "-Talking Points:": "<h3>💬  Talking Points:</h3>",
+        "-Fun Facts:": "<h3>🎉  Fun Facts:</h3>",
+        "-Slogan:": "<h3>🌟  Slogan:</h3>",
+        "-Workplace Drama:": "<h3>🎭  Workplace Drama:</h3>",
+        "-Funny Metaphors:": "<h3>😂  Funny Metaphors:</h3>"
     }
-    
     for old, new in replacements.items():
         text = text.replace(old, new)
     clean_text = "\n".join(line for line in text.splitlines() if line.strip())

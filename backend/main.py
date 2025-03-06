@@ -185,6 +185,7 @@ async def receive_name(user: UserInput):
     team_info = get_team_ai_info(team)
     team_info = beautify_text(team_info)
     team_l_5_events = get_last_5_games(team_id)
+    print("Ready")
 
     # print(team_events)
     # print(team_id)

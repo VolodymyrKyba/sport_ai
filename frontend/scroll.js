@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 const container = document.querySelector(".next-section");
-
+const answer = document.querySelector(".answer");
 gsap
   .timeline({
     scrollTrigger: {
@@ -20,8 +20,6 @@ gsap
     duration: 2.0,
     height: "400vh",
   });
-// .from(container, {
-//   opacity: 0, // Fade in content as it appears.
-//   duration: 1,
-//   ease: "power1.out",
+// .to(answer, {
+//   height: "auto",
 // });

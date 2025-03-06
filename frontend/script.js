@@ -54,37 +54,49 @@ document.addEventListener("DOMContentLoaded", function () {
         if (teamYear) {
           document.getElementById("year").innerText = teamYear;
         }
+
         const teamWeb = data.team_website;
 
         if (teamWeb) {
-          document.getElementById("website").href = teamWeb.startsWith("http")
+          const weblink = document.getElementById("website");
+          weblink.href = teamWeb.startsWith("http")
             ? teamWeb
             : "https://" + teamWeb;
+          weblink.style.display = "block";
+          weblink.textContent = "Website";
         }
+
         const teamFace = data.team_facebook;
 
         if (teamFace) {
-          document.getElementById("facebook").href = teamFace.startsWith("http")
+          const facelink = document.getElementById("facebook");
+          facelink.href = teamFace.startsWith("http")
             ? teamFace
             : "https://" + teamFace;
+          facelink.style.display = "block";
+          facelink.textContent = "Facebook";
         }
 
         const teamTwit = data.team_twitter;
 
         if (teamTwit) {
-          document.getElementById("twitter").href = teamTwit.startsWith("http")
+          const twitterLink = document.getElementById("twitter");
+          twitterLink.href = teamTwit.startsWith("http")
             ? teamTwit
             : "https://" + teamTwit;
+          twitterLink.style.display = "block";
+          twitterLink.textContent = "Twitter";
         }
 
         const teamInst = data.team_inst;
 
         if (teamInst) {
-          document.getElementById("instagram").href = teamInst.startsWith(
-            "http"
-          )
+          const instlink = document.getElementById("instagram");
+          instlink.href = teamInst.startsWith("http")
             ? teamInst
             : "https://" + teamInst;
+          instlink.style.display = "block";
+          instlink.textContent = "Instagram";
         }
       })
       .catch((error) => console.error("Error:", error));

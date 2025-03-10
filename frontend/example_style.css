@@ -98,3 +98,12 @@ h5 {
 h5:hover {
   color: rgb(175, 175, 175);
 }
+#bottom {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+#bottom:hover {
+  transform: scale(1.9);
+  transform-origin: bottom;
+}

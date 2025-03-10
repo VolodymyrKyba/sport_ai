@@ -19,44 +19,36 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("response").innerHTML = data.message;
 
         const banner_Url = data.banner_url;
-
         if (banner_Url) {
-          const banner_Element = document.getElementById("bannerImage");
-          banner_Element.src = banner_Url;
+          document.getElementById("bannerImage").src = banner_Url;
         }
+
         const formUrl = data.unifrom_url;
-
         if (formUrl) {
-          const formElement = document.getElementById("uniform");
-          formElement.src = formUrl;
+          document.getElementById("uniform").src = formUrl;
         }
-        const logo_Url = data.logo;
 
+        const logo_Url = data.logo;
         if (logo_Url) {
-          const logoElement = document.getElementById("logoImage");
-          logoElement.src = logo_Url;
+          document.getElementById("logoImage").src = logo_Url;
         }
 
         const nickName = data.nick_name;
-
         if (nickName) {
           document.getElementById("nickNameDisplay").innerText = nickName;
         }
 
         const l_5_events = data.last_5_events;
-
         if (l_5_events) {
           document.getElementById("l_5_events").innerHTML = l_5_events;
         }
 
         const teamYear = data.team_year;
-
         if (teamYear) {
           document.getElementById("year").innerText = teamYear;
         }
 
         const teamWeb = data.team_website;
-
         if (teamWeb) {
           const weblink = document.getElementById("website");
           weblink.href = teamWeb.startsWith("http")
@@ -67,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const teamFace = data.team_facebook;
-
         if (teamFace) {
           const facelink = document.getElementById("facebook");
           facelink.href = teamFace.startsWith("http")
@@ -78,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const teamTwit = data.team_twitter;
-
         if (teamTwit) {
           const twitterLink = document.getElementById("twitter");
           twitterLink.href = teamTwit.startsWith("http")
@@ -89,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const teamInst = data.team_inst;
-
         if (teamInst) {
           const instlink = document.getElementById("instagram");
           instlink.href = teamInst.startsWith("http")
@@ -100,5 +89,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       })
       .catch((error) => console.error("Error:", error));
+  });
+
+  // Додаємо функціонал завантаження контейнера як фото
+  document.getElementById("saveButton").addEventListener("click", function () {
+    const container = document.getElementById("pdf");
+
+    html2canvas(container, { scale: 2, useCORS: true }).then((canvas) => {
+      const link = document.createElement("a");
+      link.href = canvas.toDataURL("image/png");
+      link.download = "container.png";
+      link.click();
+    });
   });
 });

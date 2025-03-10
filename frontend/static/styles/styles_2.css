@@ -312,3 +312,24 @@ td {
 .site_bar > a:hover {
   color: #414141;
 }
+.buttom_bar {
+  margin-top: 50px;
+  display: flex;
+  width: 100%;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+.buttom_bar > button {
+  border-style: solid;
+  margin-top: 0px;
+  font-size: 25px;
+  padding: 0.4em;
+  color: aliceblue;
+  background-color: black;
+  cursor: pointer;
+  border-radius: 60px;
+}
+.buttom_bar > button:hover {
+  background-color: rgb(59, 59, 59);
+}

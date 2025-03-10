@@ -55,29 +55,7 @@ def get_team_ai_info(team):
         
         return team_desc
 
-
-# def get_team_info(team):
-
-#         chat_completion = client.chat.completions.create(
-#         messages=[
-#             {
-#                 "role": "system",
-#                 "content": "You are a helpful sport assistant."
-#             },
-#             {
-#                 "role": "user",
-#                 "content": f"""Give me link to logo of this team{team} 
-#                 """,
-#             }
-#         ],
-#         model="llama-3.3-70b-versatile",
-#     )
-
-#         team_desc = chat_completion.choices[0].message.content
-
-#         return team_desc
-
-# def get_team_info(team):
+# def get_team_ai_info(team):
             
 #     messages = [
 #         {
@@ -90,15 +68,22 @@ def get_team_ai_info(team):
 #             "role": "user",
 #             "content": (
 #                 f"""Give me short information about this team {team} in this format:
-#                  - Last games(score)
-#                  - Current standings
-#                  - Latest News
-#                  - Talking Points
-#                  - Fun Facts
-#                  - Celebrity Gossip
-#                  - Workplace Drama
-#                  - Funny Metaphors 
-#                  """
+#                  Information:
+#                 -Current standings: 
+#                 info
+#                 -Latest News: 
+#                 info
+#                 -Talking Points: 
+#                 info
+#                 -Fun Facts: 
+#                 info
+#                 -Slogan:
+#                 info
+#                 -Workplace Drama:
+#                 info
+#                 -Funny Metaphors: 
+#                 info
+#                 """
 #             ),
 #         },
 #     ]
@@ -106,22 +91,7 @@ def get_team_ai_info(team):
 #     team_desc = client.chat.completions.create(
 #     model="sonar-pro",
 #     messages=messages,)
-#     print(team_desc.choices[0].message.content
-# )
 #     return team_desc.choices[0].message.content
-
-# def take_logo(team):
-#     url = f"https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t={team}"
-    
-#     response = requests.get(url)
-        
-#     if response.status_code == 200:
-#         data = response.json()
-#         if data.get("teams"):
-#             return data["teams"][0].get("strBadge")
-#     return None
-
-
 
 
 

@@ -49,11 +49,16 @@ header {
   z-index: -1;
   overflow: hidden;
 }
-video {
+.video_block > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+/* video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
 
 .next-section {
   display: flex;

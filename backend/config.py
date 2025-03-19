@@ -7,7 +7,7 @@ load_dotenv()
 
 
 
-client = Groq(
+client_2 = Groq(
     api_key=os.getenv("GROQ_API_KEY"),
 )
 

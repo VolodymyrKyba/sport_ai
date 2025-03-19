@@ -3,8 +3,9 @@ from pydantic import BaseModel,Field
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 import uvicorn  # Import Uvicorn
-from config import client
+from config2 import client
 import requests
+import json
 
 app = FastAPI()
 
@@ -18,57 +19,23 @@ app.add_middleware(
 class UserInput(BaseModel):
     name: str = Field(..., example="Johsdn")
 
-def get_team_ai_info(team):
+# dict_of_point = json.loads("")
 
-        chat_completion = client.chat.completions.create(
-        messages=[
-            {
-                "role": "system",
-                "content": "You are a helpful sport assistant."
-            },
-            {
-                "role": "user",
-                "content": f"""Give me short information about this team {team} in this format:
 
-                Information:
-                -Current standings: 
-                info
-                -Latest News: 
-                info
-                -Talking Points: 
-                info
-                -Fun Facts: 
-                info
-                -Slogan:
-                info
-                -Workplace Drama:
-                info
-                -Funny Metaphors: 
-                info
-                """,
-            }
-        ],
-        model="llama-3.3-70b-versatile",
-    )
-
-        team_desc = chat_completion.choices[0].message.content
-        
-        return team_desc
 
 # def get_team_ai_info(team):
-            
-#     messages = [
-#         {
-#             "role": "system",
-#             "content": (
-#                 "You are a helpful sport assistant"
-#             ),
-#         },
-#         {   
-#             "role": "user",
-#             "content": (
-#                 f"""Give me short information about this team {team} in this format:
-#                  Information:
+
+#         chat_completion = client.chat.completions.create(
+#         messages=[
+#             {
+#                 "role": "system",
+#                 "content": "You are a helpful sport assistant."
+#             },
+#             {
+#                 "role": "user",
+#                 "content": f"""Give me short information about this team {team} in this format:
+
+#                 Information:
 #                 -Current standings: 
 #                 info
 #                 -Latest News: 
@@ -83,15 +50,53 @@ def get_team_ai_info(team):
 #                 info
 #                 -Funny Metaphors: 
 #                 info
-#                 """
-#             ),
-#         },
-#     ]
+#                 """,
+#             }
+#         ],
+#         model="llama-3.3-70b-versatile",
+#     )
+
+#         team_desc = chat_completion.choices[0].message.content
         
-#     team_desc = client.chat.completions.create(
-#     model="sonar-pro",
-#     messages=messages,)
-#     return team_desc.choices[0].message.content
+#         return team_desc
+
+def get_team_ai_info(team):
+            
+    messages = [
+        {
+            "role": "system",
+            "content": (
+                "You are a helpful sport assistant"
+            ),
+        },
+        {   
+            "role": "user",
+            "content": (
+                f"""Give me short information about this team {team} in this format:
+                 Information:
+                -Current standings: 
+                info
+                -Latest News: 
+                info
+                -Talking Points: 
+                info
+                -Fun Facts: 
+                info
+                -Slogan:
+                info
+                -Workplace Drama:
+                info
+                -Funny Metaphors: 
+                info
+                """
+            ),
+        },
+    ]
+        
+    team_desc = client.chat.completions.create(
+    model="sonar-pro",
+    messages=messages,)
+    return team_desc.choices[0].message.content
 
 
 

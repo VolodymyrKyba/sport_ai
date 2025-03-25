@@ -7,7 +7,7 @@ import http.client
 import json
 from bs4 import BeautifulSoup as bs
 
-team = "Barcelona"
+team = "Yankees"
 
 
 def Name(t_n):
@@ -165,30 +165,169 @@ def SocialMediaHandles(t_n):
 
 # def NewsOutlets(t_n):
 #     return "NewsOutlets by func"
+    
 
-# def MajorAchievements(t_n):
-#     return "MajorAchievements by func"
+def MajorAchievements(t_n):
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Tell me shortly this team {t_n} major achievments
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
 
-# def HistoricalRivals(t_n):
-#     return "HistoricalRivals by func"
+    team_desc = chat_completion.choices[0].message.content
+        
+    return team_desc
 
-# def SongsAndChants(t_n):
-#     return "SongsAndChants by func"
+def HistoricalRivals(t_n):
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Tell me shortly this team {t_n} historical rivals
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
 
-# def Traditions(t_n):
-#     return "Traditions by func"
+    team_desc = chat_completion.choices[0].message.content
+        
+    return team_desc
+
+def Songs(t_n):
+    lst_of_songs = []
+    query = f"{t_n} fan songs"
+
+    params = {
+        "q": query,
+        "tbm": "vid"  
+    }
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+    }
+
+    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
+
+    if "detected unusual traffic" in response.text.lower():
+        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
+    else:
+        soup = bs(response.text, "html.parser")
+
+        video_links = [a["href"] for a in soup.select("a") if a.has_attr("href") and "youtube.com" in a["href"]]
+
+        if video_links:
+
+            for link in video_links[:5]:  
+                
+                lst_of_songs.append(link)
+
+    return(lst_of_songs)
+
+def Traditions(t_n):
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Tell me top 3 traditions of this sport team {t_n}
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
+
+    team_desc = chat_completion.choices[0].message.content
+        
+    return team_desc
+    
 
 # def FanEngagementInitiatives(t_n):
 #     return "FanEngagementInitiatives by func"
 
-# def TV_RadioBroadcasters(t_n):
-#     return "TV/RadioBroadcasters by func"
+def TV_RadioBroadcasters(t_n):
+    lst_of_broadcast = []
+    query = f"{t_n} broadcast"
 
-# def UniqueGameRules(t_n):
-#     return "UniqueGameRules by func"
+    params = {
+        "q": query,
+        "tbm": "vid"  
+    }
 
-# def HistoricalSignificance(t_n):
-#     return "HistoricalSignificance by func"
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+    }
+
+    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
+
+    if "detected unusual traffic" in response.text.lower():
+        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
+    else:
+        soup = bs(response.text, "html.parser")
+
+        video_links = [a["href"] for a in soup.select("a") if a.has_attr("href") and "youtube.com" in a["href"]]
+
+        if video_links:
+
+            for link in video_links[:5]:  
+                
+                lst_of_broadcast.append(link)
+
+    return(lst_of_broadcast)
+
+def Playing_Styles(t_n):
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Tell shortly  about playing styles of this team {t_n}
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
+
+    team_desc = chat_completion.choices[0].message.content
+        
+    return team_desc
+    
+
+def HistoricalSignificance(t_n):
+    lst_image = []
+    promt = f"{t_n}  Historical Significance sport  team"
+    params = {"q" : promt , "tbm" : "isch",}
+    html = requests.get("https://www.google.com/search",params=params,timeout=30)
+    html.text
+    soup = bs(html.content,features="html.parser")
+    images = soup.select("div img")
+    
+    lst_image.append(images[1]["src"])
+    lst_image.append( images[2]["src"])
+    lst_image.append(images[3]["src"])
+    lst_image.append(images[4]["src"])
+    lst_image.append(images[5]["src"])
+
+    return lst_image
 
 # def SymbolismAndIconography(t_n):
 #     return "SymbolismAndIconography by func"
@@ -338,53 +477,56 @@ with open("/home/volodymyrkyba/work/sport_ai/backend/source_data.json", "r", enc
     # print(dict_of_point)
 
 
-
-
 # def get_team_ai_info(team,dict_of_point):
-
-#         chat_completion = client.chat.completions.create(
-#         messages=[
-#             {
-#                 "role": "system",
-#                 "content": "You are a helpful sport assistant."
-#             },
-#             {
-#                 "role": "user",
-#                 "content": f"""I'm going to a meeting with a boss who loves {team}. Choose the main points from this list {dict_of_point} that I should know to ensure the conversation goes successfully.
-#                 return only  list of  point number
-#                 """,
-#             }
-#         ],
-#         model="llama-3.3-70b-versatile",
-#     )
-
-#         team_desc = chat_completion.choices[0].message.content
+            
+#     messages = [
+#         {
+#             "role": "system",
+#             "content": (
+#                 "You are a helpful sport assistant"
+#             ),
+#         },
+#         {   
+#             "role": "user",
+#             "content": (
+#                 f"""I'm creating a web page that would provide information about a sports team for someone going to a meeting with their boss or friends to stay up to date on the topic. Also choose songs I have a list of key features  so choose the ones that best fit the team {team} Here we have list {dict_of_point},
+#                 return only serial number of features
+#                 """
+#             ),
+#         },
+#     ]
         
-#         return team_desc
+#     team_desc = client.chat.completions.create(
+#     model="sonar-pro",
+#     messages=messages,)
+#     return team_desc.choices[0].message.content
+
+
+
 
 def get_team_ai_info(team,dict_of_point):
-            
-    messages = [
-        {
-            "role": "system",
-            "content": (
-                "You are a helpful sport assistant"
-            ),
-        },
-        {   
-            "role": "user",
-            "content": (
-                f"""I'm creating a web page that would provide information about a sports team for someone going to a meeting with their boss or friends to stay up to date on the topic. I have a list of key features so choose the ones that best fit the team {team} Here we have list {dict_of_point},
+
+        chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""From this list {dict_of_point} choose the best features about this team,
                 return only serial number of features
-                """
-            ),
-        },
-    ]
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
+
+        team_desc = chat_completion.choices[0].message.content
         
-    team_desc = client.chat.completions.create(
-    model="sonar-pro",
-    messages=messages,)
-    return team_desc.choices[0].message.content
+        return team_desc
+
+
 
 lst_of_point = extract_numbers_from_text(get_team_ai_info(team,dict_of_point))
 print(lst_of_point)
@@ -392,5 +534,7 @@ for number in lst_of_point:
     feature = dict_of_point.get(str(number))
     
     if feature in globals(): 
-        # print(feature) 
+        
         print(globals()[feature](team))
+
+

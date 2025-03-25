@@ -2,17 +2,20 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Sigmar&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Teko&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body,
 html {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
 }
+
 header {
   position: fixed;
   top: 0;
@@ -24,6 +27,7 @@ header {
   justify-content: space-between;
   background-color: rgb(255, 255, 255);
 }
+
 .page {
   width: 100%;
   display: flex;
@@ -31,12 +35,14 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 .page > a {
   font-family: Roboto;
   font-size: 18px;
   text-decoration: none;
   color: black;
 }
+
 .page > a:hover {
   color: rgb(87, 87, 87);
 }
@@ -49,16 +55,18 @@ header {
   z-index: -1;
   overflow: hidden;
 }
-.video_block > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-/* video {
+
+/* .video_block > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 } */
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .next-section {
   display: flex;
@@ -75,31 +83,37 @@ header {
   align-items: center;
   /* padding: 10px; */
 }
+
 .info {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
 }
+
 .big_word {
   margin: 0;
   display: flex;
   align-items: center;
 }
+
 .big_word > p {
   font-family: Bebas Neue;
   font-size: 95px;
 }
+
 .small_word {
   margin-top: -20px;
   display: flex;
   text-align: center;
 }
+
 .small_word > p {
   font-family: Roboto;
   font-size: 45px;
   text-align: center;
 }
+
 .btn {
   margin-top: 15px;
   display: flex;
@@ -107,13 +121,16 @@ header {
   /* padding: 20px; */
   justify-content: center;
 }
+
 .ai_btn {
   display: flex;
 }
+
 .inpt {
   margin-top: 5px;
   display: flex;
 }
+
 .ai_btn > button {
   border-style: solid;
   font-size: 35px;
@@ -124,6 +141,7 @@ header {
   margin-right: 40px;
   border-radius: 60px;
 }
+
 .ai_btn > button:hover {
   background-color: rgb(59, 59, 59);
 }
@@ -144,10 +162,12 @@ header {
   border-radius: 60px;
   padding-top: 6px;
 }
+
 .inpt > input:hover {
   color: white;
   background-color: black;
 }
+
 .answer {
   margin-top: 40px;
   padding: 20px;
@@ -161,11 +181,13 @@ header {
   border-color: rgb(0, 0, 0);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
 .left_bar {
   display: flex;
   flex-direction: column;
   /* padding-top: 30px; */
 }
+
 .form_bar {
   margin-top: 20px;
   display: flex;
@@ -174,12 +196,14 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 .info_bar {
   display: block;
 
   height: 100px;
   padding: 10px;
 }
+
 .logo_bar {
   display: flex;
   width: 100%;
@@ -188,11 +212,13 @@ header {
   align-items: center;
   /* padding-bottom: 40px; */
 }
+
 .logo_bar > img {
   width: auto;
   max-height: 100%;
   padding: 20px;
 }
+
 .form_bar > img {
   width: auto;
   max-height: 100%;
@@ -207,6 +233,7 @@ header {
   font-weight: bold;
   color: rgb(0, 0, 0);
 }
+
 #video_btn {
   width: 60px;
   height: 60px;
@@ -222,9 +249,11 @@ header {
   /* padding-left: 0px; */
   padding-top: 3px;
 }
+
 #playPauseImg {
   width: 30px;
 }
+
 #video_btn:hover {
   background-color: rgb(255, 255, 255);
 }
@@ -235,15 +264,18 @@ header {
   justify-content: center;
   margin-top: 500px;
 }
+
 .banner > img {
   border-radius: 100px;
   width: 60%;
 }
+
 #year {
   text-align: center;
   font-family: Teko;
   font-size: 30px;
 }
+
 .name {
   display: flex;
   padding: 10px;
@@ -252,24 +284,30 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 .name > p {
   font-size: 40px;
   font-family: Sigmar;
 }
+
 .ai_info {
   display: block;
 }
+
 .ai_info > p {
   font-family: Teko;
   font-size: 15px;
   padding: 10px;
 }
+
 #response > h1 {
   text-align: center;
 }
+
 #l_5_events {
   padding: 10px;
 }
+
 table {
   width: 80%;
   /* margin: 20px auto; */
@@ -299,6 +337,7 @@ td {
   font-size: 12px;
   color: #333;
 }
+
 .site_bar {
   justify-content: center;
   align-items: center;
@@ -307,6 +346,7 @@ td {
   flex-direction: column;
   padding: 10px;
 }
+
 .site_bar > a {
   /* padding: px; */
   font-family: Roboto;
@@ -314,9 +354,11 @@ td {
   text-decoration: none;
   color: black;
 }
+
 .site_bar > a:hover {
   color: #414141;
 }
+
 .buttom_bar {
   margin-top: 50px;
   display: flex;
@@ -325,6 +367,7 @@ td {
   justify-content: center;
   align-items: center;
 }
+
 .buttom_bar > button {
   border-style: solid;
   margin-top: 0px;
@@ -335,6 +378,233 @@ td {
   cursor: pointer;
   border-radius: 60px;
 }
+
 .buttom_bar > button:hover {
   background-color: rgb(59, 59, 59);
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 45px;
+  }
+
+  .page {
+    margin-inline: 1em;
+  }
+
+  .page > a {
+    font-size: 14px;
+  }
+
+  .next-section {
+    width: 50%;
+    top: 60vh;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 150vh;
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 75vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    align-items: center;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  .big_word {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  .big_word > p {
+    font-family: Bebas Neue;
+    font-size: 60px;
+    text-align: center;
+  }
+  .small_word {
+    margin-top: 0px;
+    display: flex;
+    text-align: center;
+  }
+  .small_word > p {
+    font-family: Roboto;
+    font-size: 20px;
+    text-align: center;
+  }
+  .btn {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    /* padding: 20px; */
+    justify-content: center;
+  }
+  .ai_btn {
+    display: flex;
+    justify-content: center;
+  }
+
+  .inpt {
+    margin-top: 5px;
+    display: flex;
+  }
+  .ai_btn > button {
+    display: block;
+    margin: 0px;
+    /* margin-left: 40px; */
+    text-align: center;
+    align-items: center;
+
+    font-size: 30px;
+    width: 80%;
+  }
+  .inpt > input {
+    height: 70px;
+    width: 200px;
+    margin: 0px;
+  }
+  #video_btn {
+    top: 65px;
+    right: 20px;
+  }
+  .banner {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    margin-top: 500px;
+  }
+
+  .banner > img {
+    border-radius: 100px;
+    width: 60%;
+  }
+  .answer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  .name {
+    margin-top: 50px;
+  }
+  .name > p {
+    font-size: 30px;
+    text-align: center;
+  }
+  .ai_info > p {
+    font-family: Teko;
+    font-size: 10px;
+    padding: 0px;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 3px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #000000;
+    color: white;
+    font-size: 9px;
+  }
+
+  td {
+    font-size: 6px;
+  }
+
+  /* .big_word > p {
+    font-size: 50px;
+    text-align: center;
+  }
+  .small_word > p {
+    font-size: 25px;
+    margin-top: -10px;
+  }
+
+  .ai_btn > button {
+    font-size: 25px;
+    margin-right: 15px;
+    padding: 0.3em;
+  }
+  .inpt > input {
+    width: 100%;
+    height: 60px;
+    font-size: 30px;
+    margin-right: 15px;
+  }
+
+  .answer {
+    width: 90%;
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  .answer > p {
+    margin-top: 20px;
+    font-size: 11px;
+  }
+
+  table {
+    width: 100%;
+  }
+  th {
+    font-size: 12px;
+  }
+  td {
+    font-size: 10px;
+  }
+
+  .site_bar > a {
+    font-size: 16px;
+  }
+
+  #video_btn {
+    right: 20px;
+    top: 70px;
+    width: 50px;
+    height: 50px;
+  }
+  #playPauseImg {
+    width: 25px;
+  }
+
+  .banner {
+    width: 90%;
+    margin-top: 300px;
+  }
+  .banner > img {
+    width: 80%;
+  }
+  #year {
+    font-size: 24px;
+  }
+  .name > p {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .big_word > p {
+    font-size: 40px;
+  }
+  .small_word > p {
+    font-size: 20px;
+  }
+  .ai_btn > button {
+    font-size: 20px;
+  }
+  .inpt > input {
+    font-size: 25px; */
+  /* } */
 }

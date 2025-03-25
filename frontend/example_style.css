@@ -107,3 +107,28 @@ h5:hover {
   transform: scale(1.9);
   transform-origin: bottom;
 }
+@media (max-width: 768px) {
+  header {
+    height: 45px;
+  }
+
+  .page {
+    margin-inline: 1em;
+  }
+
+  .page > a {
+    font-size: 14px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+  .up {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

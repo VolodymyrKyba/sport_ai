@@ -7,7 +7,7 @@ import http.client
 import json
 from bs4 import BeautifulSoup as bs
 
-team = "Yankees"
+team = "Liverpool"
 
 
 def Name(t_n):
@@ -69,7 +69,7 @@ def League_Division(t_n):
         if data.get("teams"):
             info = data["teams"][0]
             lst_of_league.append(info.get("strLeague"))
-            for i in range(1, 8):  # Check leagues from strLeague to strLeague7
+            for i in range(1, 8):  
                 league_key = f"strLeague{i}" if i == 1 else f"strLeague{i-1}"
                 league_value = info.get(league_key)
                 if league_value and league_value != "":
@@ -85,7 +85,6 @@ def Stadium_VenueName(t_n):
             'x-rapidapi-host': "v3.football.api-sports.io",
             'x-rapidapi-key': "4e1796c9bebdff310d3b134a9d9642d9"
         }
-        # Use the team ID for Barcelona, which is 529
         conn.request("GET", 
                     f"/teams?name={formatted_name}", headers=headers)
 
@@ -332,17 +331,100 @@ def HistoricalSignificance(t_n):
 # def SymbolismAndIconography(t_n):
 #     return "SymbolismAndIconography by func"
 
-# def LegendaryPlayers(t_n):
-#     return "LegendaryPlayers by func"
+def LegendaryPlayers(t_n):
+    dct_of_player = {}
+    def took_image(player_name):
+        promt = f"{player_name}"
+        params = {"q" : promt , "tbm" : "isch",}
+        html = requests.get("https://www.google.com/search",params=params,timeout=30)
+        html.text
+        soup = bs(html.content,features="html.parser")
+        images = soup.select("div img")
+        return images[1]["src"]
 
-# def Coaches_Managers(t_n):
-#     return "Coaches/Managers by func"
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Return a list [] with name of top 3 legendary players of this team {t_n}
+                1.Name
+                2.Name
+                3.Name 
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
+
+    team_desc = chat_completion.choices[0].message.content
+    names = re.findall(r"\d+\.\s(.+)", team_desc) 
+    for name in names:
+        dct_of_player[name] = took_image(name)
+    return dct_of_player
+
+    
+
+def Coaches_Managers(t_n):
+    dct_of_coach = {}
+    def took_image(coach_name):
+        promt = f"{coach_name}"
+        params = {"q" : promt , "tbm" : "isch",}
+        html = requests.get("https://www.google.com/search",params=params,timeout=30)
+        html.text
+        soup = bs(html.content,features="html.parser")
+        images = soup.select("div img")
+        return images[1]["src"]
+
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Return a list [] with name of top 3 coach of this team {t_n}
+                1.Name
+                2.Name
+                3.Name 
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
+
+    team_desc = chat_completion.choices[0].message.content
+    names = re.findall(r"\d+\.\s(.+)", team_desc) 
+    for name in names:
+        dct_of_coach[name] = took_image(name)
+    return dct_of_coach
 
 # def Owners_Executives(t_n):
 #     return "Owners/Executives by func"
 
-# def CharitableInitiatives(t_n):
-#     return "CharitableInitiatives by func"
+def CharitableInitiatives(t_n):
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Tell shortly about Charitable Initiatives of this team {t_n}
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
+
+    team_desc = chat_completion.choices[0].message.content
+        
+    return team_desc
 
 # def YouthDevelopmentPrograms(t_n):
 #     return "YouthDevelopmentPrograms by func"
@@ -350,20 +432,117 @@ def HistoricalSignificance(t_n):
 # def StadiumFeatures(t_n):
 #     return "StadiumFeatures by func"
 
-# def PreGameRituals(t_n):
-#     return "PreGameRituals by func"
+def PreGameRituals(t_n):
+    lst_of_rituals = []
+    query = f"{t_n} Pre Game Rituals"
+
+    params = {
+        "q": query,
+        "tbm": "vid"  
+    }
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+    }
+
+    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
+
+    if "detected unusual traffic" in response.text.lower():
+        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
+    else:
+        soup = bs(response.text, "html.parser")
+
+        video_links = [a["href"] for a in soup.select("a") if a.has_attr("href") and "youtube.com" in a["href"]]
+
+        if video_links:
+
+            for link in video_links[:5]:  
+                
+                lst_of_rituals.append(link)
+
+    return(lst_of_rituals)
 
 # def ConcessionOptions(t_n):
 #     return "ConcessionOptions by func"
 
-# def RecentPerformance(t_n):
-#     return "RecentPerformance by func"
+def RecentPerformance(t_n):
+    def get_team_api_info(t_n):
+        url = f"https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t={t_n}"
+        response = requests.get(url)
+        
+        if response.status_code == 200:
+            data = response.json()
+            if data.get("teams"):
+                return data["teams"][0].get("idTeam")
+        return None  # Ensure it returns None if no team is found
 
-# def HistoricalStatistics(t_n):
-#     return "HistoricalStatistics by func"
+    team_id = get_team_api_info(t_n)
+    if not team_id:
+        return "<p>Team not found.</p>"
 
-# def PlayerGoals(t_n):
-#     return "PlayerGoals by func"
+    url = f"https://www.thesportsdb.com/api/v1/json/3/eventslast.php?id={team_id}"
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        data = response.json()
+        if data.get("results"):
+            info = data["results"]
+            events = "<h3>📅 Last 5 Matches:</h3><table border='1' style='width:100%; text-align:center;'><tr><th>Date</th><th>Home</th><th>Score</th><th>Away</th></tr>"
+            for match in info:
+                events += f"<tr><td>{match.get('dateEventLocal')}</td><td>{match.get('strHomeTeam')}</td><td>{match.get('intHomeScore')}-{match.get('intAwayScore')}</td><td>{match.get('strAwayTeam')}</td></tr>"
+            events += "</table>"
+            return events
+    return "<p>No match data available.</p>"
+
+def HistoricalStatistics(t_n):
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Provide historical statistics of this team {t_n}
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
+
+    team_desc = chat_completion.choices[0].message.content
+        
+    return team_desc
+
+def PlayerGoals(t_n):
+    lst_of_top_moments = []
+    query = f"{t_n} Top goal and moments"
+
+    params = {
+        "q": query,
+        "tbm": "vid"  
+    }
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+    }
+
+    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
+
+    if "detected unusual traffic" in response.text.lower():
+        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
+    else:
+        soup = bs(response.text, "html.parser")
+
+        video_links = [a["href"] for a in soup.select("a") if a.has_attr("href") and "youtube.com" in a["href"]]
+
+        if video_links:
+
+            for link in video_links[:5]:  
+                
+                lst_of_top_moments.append(link)
+
+    return(lst_of_top_moments)
 
 # def PlayerAssists(t_n):
 #     return "PlayerAssists by func"
@@ -466,15 +645,12 @@ def HistoricalSignificance(t_n):
 
 
 def extract_numbers_from_text(text):
-    # Використовуємо регулярний вираз для пошуку всіх чисел у тексті
     numbers = re.findall(r'\d+', text)
-    # Перетворюємо знайдені числа на тип int
     return [int(number) for number in numbers]
 
 
 with open("/home/volodymyrkyba/work/sport_ai/backend/source_data.json", "r", encoding="utf-8") as file:
     dict_of_point = json.load(file)
-    # print(dict_of_point)
 
 
 # def get_team_ai_info(team,dict_of_point):
@@ -538,3 +714,11 @@ for number in lst_of_point:
         print(globals()[feature](team))
 
 
+
+
+# print(Coaches_Managers("Manchester United"))
+# print(CharitableInitiatives("Miami Heat"))
+# print(PreGameRituals("Chicago Bulls"))
+# print(RecentPerformance("Barcelona"))
+# print(HistoricalStatistics("Barcelona"))
+# print(PlayerGoals("Chicago Bulls"))

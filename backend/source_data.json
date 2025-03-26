@@ -21,13 +21,12 @@
   "21": "HistoricalSignificance",
 
   "23": "LegendaryPlayers",
-  "24": "Coaches/Managers",
-  "25": "Owners/Executives",
+  "24": "Coaches_Managers",
+
   "26": "CharitableInitiatives",
-  "27": "YouthDevelopmentPrograms",
-  "28": "StadiumFeatures",
+
   "29": "PreGameRituals",
-  "30": "ConcessionOptions",
+
   "31": "RecentPerformance",
   "32": "HistoricalStatistics",
   "33": "PlayerGoals",

@@ -6,6 +6,39 @@ from config import client_2
 import http.client
 import json
 from bs4 import BeautifulSoup as bs
+import scrapy
+from scrapy.crawler import CrawlerProcess
+import logging
+from scrapy import signals
+
+class PlayerAssistSpider(scrapy.Spider):
+    name = "player_assist"
+
+    def __init__(self, team, *args, **kwargs):
+        super(PlayerAssistSpider, self).__init__(*args, **kwargs)
+        self.start_urls = [f"https://www.statmuse.com/fc/ask/player-with-most-assists-for-{team}"]
+
+    def parse(self, response):
+        assists = response.css('span.text-team-secondary span::text').getall()
+        players = response.css('span.hidden::text').getall()
+
+        for player, assist in zip(players, assists):
+            yield {'player': player, 'assists': assist}
+
+class PlayerFoulsDrawnSpider(scrapy.Spider):
+    name = "player_fouls_drawn"
+
+    def __init__(self, team, *args, **kwargs):
+        super(PlayerFoulsDrawnSpider, self).__init__(*args, **kwargs)
+        self.start_urls = [f"https://www.statmuse.com/fc/ask/player-with-most-fouls-drawn-for-{team}"]
+
+    def parse(self, response):
+        fouls = response.css('span.text-team-secondary span::text').getall()
+        players = response.css('span.hidden::text').getall()
+
+        for player, foul in zip(players, fouls):
+            yield {'player': player, 'fouls_drawn': foul}
+
 
 team = "Liverpool"
 
@@ -544,12 +577,41 @@ def PlayerGoals(t_n):
 
     return(lst_of_top_moments)
 
-# def PlayerAssists(t_n):
-#     return "PlayerAssists by func"
+ 
 
-# def PlayerFoulsDrawn(t_n):
-#     return "PlayerFoulsDrawn by func"
+def PlayerAssists(t_n):
+    logging.getLogger('scrapy').setLevel(logging.WARNING)
 
+    results = []
+
+    def collect_items(item, response, spider):
+        results.append(item)
+
+    process = CrawlerProcess(settings={"LOG_LEVEL": "WARNING"})
+    crawler = process.create_crawler(PlayerAssistSpider)
+    crawler.signals.connect(collect_items, signals.item_scraped)
+
+    process.crawl(crawler, team=t_n)
+    process.start()
+
+    return results
+
+def PlayerFoulsDrawn(team_name):
+    logging.getLogger('scrapy').setLevel(logging.WARNING)
+
+    results = []
+
+    def collect_items(item, response, spider):
+        results.append(item)
+
+    process = CrawlerProcess(settings={"LOG_LEVEL": "WARNING"})
+    crawler = process.create_crawler(PlayerFoulsDrawnSpider)
+    crawler.signals.connect(collect_items, signals.item_scraped)
+
+    process.crawl(crawler, team=team_name)
+    process.start()
+
+    return results
 # def PlayerTacklesMade(t_n):
 #     return "PlayerTacklesMade by func"
 
@@ -680,38 +742,38 @@ with open("/home/volodymyrkyba/work/sport_ai/backend/source_data.json", "r", enc
 
 
 
-def get_team_ai_info(team,dict_of_point):
+# def get_team_ai_info(team,dict_of_point):
 
-        chat_completion = client_2.chat.completions.create(
-        messages=[
-            {
-                "role": "system",
-                "content": "You are a helpful sport assistant."
-            },
-            {
-                "role": "user",
-                "content": f"""From this list {dict_of_point} choose the best features about this team,
-                return only serial number of features
-                """,
-            }
-        ],
-        model="llama-3.3-70b-versatile",
-    )
+#         chat_completion = client_2.chat.completions.create(
+#         messages=[
+#             {
+#                 "role": "system",
+#                 "content": "You are a helpful sport assistant."
+#             },
+#             {
+#                 "role": "user",
+#                 "content": f"""From this list {dict_of_point} choose the best features about this team,
+#                 return only serial number of features
+#                 """,
+#             }
+#         ],
+#         model="llama-3.3-70b-versatile",
+#     )
 
-        team_desc = chat_completion.choices[0].message.content
+#         team_desc = chat_completion.choices[0].message.content
         
-        return team_desc
+#         return team_desc
 
 
 
-lst_of_point = extract_numbers_from_text(get_team_ai_info(team,dict_of_point))
-print(lst_of_point)
-for number in lst_of_point:
-    feature = dict_of_point.get(str(number))
+# lst_of_point = extract_numbers_from_text(get_team_ai_info(team,dict_of_point))
+# print(lst_of_point)
+# for number in lst_of_point:
+#     feature = dict_of_point.get(str(number))
     
-    if feature in globals(): 
+#     if feature in globals(): 
         
-        print(globals()[feature](team))
+#         print(globals()[feature](team))
 
 
 
@@ -722,3 +784,5 @@ for number in lst_of_point:
 # print(RecentPerformance("Barcelona"))
 # print(HistoricalStatistics("Barcelona"))
 # print(PlayerGoals("Chicago Bulls"))
+# print(PlayerAssists("Barcelona"))
+print(PlayerFoulsDrawn("Benfica"))

@@ -612,6 +612,10 @@ def PlayerFoulsDrawn(team_name):
     process.start()
 
     return results
+
+
+
+
 # def PlayerTacklesMade(t_n):
 #     return "PlayerTacklesMade by func"
 
@@ -627,32 +631,141 @@ def PlayerFoulsDrawn(team_name):
 # def TeamMascot(t_n):
 #     return "TeamMascot by func"
 
-# def SpecialEvents(t_n):
-#     return "SpecialEvents by func"
+
+
+
+def SpecialEvents(t_n):
+    def get_team_api_info(t_n):
+        url = f"https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t={t_n}"
+        response = requests.get(url)
+        
+        if response.status_code == 200:
+            data = response.json()
+            if data.get("teams"):
+                return data["teams"][0].get("idTeam")
+        return None  # Ensure it returns None if no team is found
+
+    team_id = get_team_api_info(t_n)
+    if not team_id:
+        return "<p>Team not found.</p>"
+
+    url = f"https://www.thesportsdb.com/api/v1/json/3/eventslast.php?id={team_id}"
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        data = response.json()
+        if data.get("results"):
+            info = data["results"]
+            events = "<h3>📅 Last 5 Matches:</h3><table border='1' style='width:100%; text-align:center;'><tr><th>Date</th><th>Home</th><th>Score</th><th>Away</th></tr>"
+            for match in info:
+                events += f"<tr><td>{match.get('dateEventLocal')}</td><td>{match.get('strHomeTeam')}</td><td>{match.get('intHomeScore')}-{match.get('intAwayScore')}</td><td>{match.get('strAwayTeam')}</td></tr>"
+            events += "</table>"
+            return events
+    return "<p>No match data available.</p>"
 
 # def FanForumsAndCommunities(t_n):
-#     return "FanForumsAndCommunities by func"
+#     url = f"https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t={team}"
+    
+#     response = requests.get(url)
+        
+#     if response.status_code == 200:
+#         data = response.json()
+#         if data.get("teams"):
+#             info = data["teams"][0]
+#             team_website = info.get("strWebsite")
+#             team_facebook = info.get("strFacebook")
+#             team_twitter = info.get("strTwitter")
+#             team_inst = info.get("strInstagram")
+#     return team_website,team_facebook,team_twitter,team_inst
 
-# def FamousFans(t_n):
-#     return "FamousFans by func"
+def FamousFans(t_n):
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Tell me famous fans of this team {t_n} 
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
 
-# def PreferredFormation(t_n):
-#     return "PreferredFormation by func"
+    team_desc = chat_completion.choices[0].message.content
+        
+    return team_desc
+
+def PreferredFormation(t_n):
+    
+    promt = f"{t_n} preferred formation"
+    params = {"q" : promt , "tbm" : "isch",}
+    html = requests.get("https://www.google.com/search",params=params,timeout=30)
+    html.text
+    soup = bs(html.content,features="html.parser")
+    images = soup.select("div img")
+    return images[1]["src"]
 
 # def TacticalStyle(t_n):
 #     return "TacticalStyle by func"
 
-# def SetPieceTactics(t_n):
-#     return "SetPieceTactics by func"
+def SetPieceTactics(t_n):
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Tell me shortly Set Piece Tactics of this team {t_n} 
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
+
+    team_desc = chat_completion.choices[0].message.content
+        
+    return team_desc
 
 # def NotableTacticalChanges(t_n):
 #     return "NotableTacticalChanges by func"
 
-# def CurrentHeadCoach_Manager(t_n):
-#     return "CurrentHeadCoach/Manager by func"
+def CurrentHeadCoach_Manager(t_n):
+  
+    search_query = f"{t_n} current head coach"
+    params = {"q": search_query, "tbm": "nws"}  # Використання пошуку новин для кращого результату
+    response = requests.get("https://www.google.com/search", params=params, timeout=30)
+    
+    if response.status_code != 200:
+        return None, None
+    
+    soup = bs(response.content, "html.parser")
+    name_element = soup.select_one(".BNeawe.s3v9rd.AP7Wnd")  # Пошук першого релевантного текстового результату
+    
+    image_params = {"q": f"{t_n} current head coach", "tbm": "isch"}  # Пошук зображень
+    image_response = requests.get("https://www.google.com/search", params=image_params, timeout=30)
+    
+    if image_response.status_code != 200:
+        return None, None
+    
+    image_soup = bs(image_response.content, "html.parser")
+    images = image_soup.select("div img")
+    
+    coach_name = name_element.text if name_element else "Unknown"
+    coach_image = images[1]["src"] if len(images) > 1 else None
+    
+    return coach_name, coach_image
+ 
+
+   
 
 # def AssistantCoaches(t_n):
 #     return "AssistantCoaches by func"
+
 
 # def PreviousNotableManagers(t_n):
 #     return "PreviousNotableManagers by func"
@@ -660,12 +773,45 @@ def PlayerFoulsDrawn(team_name):
 # def ManagerialPhilosophy(t_n):
 #     return "ManagerialPhilosophy by func"
 
-# def EstimatedTeamValue(t_n):
-#     return "EstimatedTeamValue by func"
+def EstimatedTeamValue(t_n):
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Return only estimated team value of this team {t_n} 
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
 
-# def MajorSponsors(t_n):
-#     return "MajorSponsors by func"
+    team_desc = chat_completion.choices[0].message.content
+        
+    return team_desc
 
+def MajorSponsors(t_n):
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Return only major sponsors of this team {t_n} 
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
+
+    team_desc = chat_completion.choices[0].message.content
+        
+    return team_desc
 # def KitManufacturer(t_n):
 #     return "KitManufacturer by func"
 
@@ -785,4 +931,6 @@ with open("/home/volodymyrkyba/work/sport_ai/backend/source_data.json", "r", enc
 # print(HistoricalStatistics("Barcelona"))
 # print(PlayerGoals("Chicago Bulls"))
 # print(PlayerAssists("Barcelona"))
-print(PlayerFoulsDrawn("Benfica"))
+# print(PreferredFormation("Barcelona"))
+# print(EstimatedTeamValue("Barcelona"))
+print(MajorSponsors("Barcelona"))

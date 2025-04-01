@@ -1,72 +1,46 @@
-import scrapy
-from scrapy.crawler import CrawlerProcess
-import logging
-from scrapy import signals
 import requests
+from bs4 import BeautifulSoup as bs
 
-class TeamSpecialEventsSpider(scrapy.Spider):
-    name = "team_special_events"
+def get_social_media_reactions(t_n):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    }
 
-    def __init__(self, team_name, team_id, *args, **kwargs):
-        super(TeamSpecialEventsSpider, self).__init__(*args, **kwargs)
-        self.team_name = team_name
-        self.team_id = team_id
-        self.start_urls = [f"https://www.espn.com/soccer/team/fixtures/_/id/{team_id}"]
+    # 1. Пошук реакції у новинах
+    search_query = f"{t_n} popular social media reactions"
+    params = {"q": search_query, "tbm": "nws"}  # новини
+    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
 
-    def parse(self, response):
-        rows = response.css('td[width="10%"]')
-        for row in rows:
-            link = row.css('a::attr(href)').get()
-            date = row.css('::text').get().strip()
-            if link and "event" in link:
-                event_id = link.split("/")[2].split("-")[0]
-                yield {
-                    "team": self.team_name,
-                    "event_id": event_id,
-                    "date": date,
-                    "url": f"https://www.espn.com{link}"
-                }
+    if response.status_code != 200:
+        return None, None, None
 
+    soup = bs(response.content, "html.parser")
+    reaction_element = soup.select_one(".BNeawe.s3v9rd.AP7Wnd")
 
-def get_team_api_info(team_name):
-    url = f"https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t={team_name}"
-    response = requests.get(url)
+    # 2. Пошук картинки (мем / реакція)
+    image_params = {"q": search_query, "tbm": "isch"} 
+    image_response = requests.get("https://www.google.com/search", params=image_params, headers=headers, timeout=30)
 
-    if response.status_code == 200:
-        data = response.json()
-        if data.get("teams"):
-            return data["teams"][0].get("idTeam")
-    return None
+    if image_response.status_code != 200:
+        return None, None, None
 
+    image_soup = bs(image_response.content, "html.parser")
+    images = image_soup.select("img")
 
-def get_special_events(teams):
-    logging.getLogger('scrapy').setLevel(logging.WARNING)
+    # 3. Пошук останніх 3 новин
+    news_list = []
+    news_items = soup.select("div.dbsr")
+    for item in news_items[:3]:
+        title = item.select_one("div.JheGif.nDgy9d")
+        link = item.a["href"]
+        if title and link:
+            news_list.append({"title": title.text, "link": link})
 
-    results = []
+    # Формування результату
+    reaction_text = reaction_element.text if reaction_element else "No reaction found"
+    image_url = images[1]["src"] if len(images) > 1 else None
 
-    def collect_items(item, response, spider):
-        results.append(item)
+    return reaction_text, image_url, news_list
 
-    process = CrawlerProcess(settings={"LOG_LEVEL": "WARNING"})
-
-    for team_name in teams:
-        team_id = get_team_api_info(team_name)
-        if team_id:
-            crawler = process.create_crawler(TeamSpecialEventsSpider)
-            crawler.signals.connect(collect_items, signals.item_scraped)
-            process.crawl(crawler, team_name=team_name, team_id=team_id)
-
-    process.start()
-
-    return results
-
-
-# Приклад використання:
-teams = [
-    "real madrid",
-    "barcelona",
-    "chelsea"
-]
-
-events_list = get_special_events(teams)
-print(events_list)
+# Використання
+print( get_social_media_reactions("Miami heat"))

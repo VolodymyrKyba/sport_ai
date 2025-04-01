@@ -10,7 +10,14 @@ import scrapy
 from scrapy.crawler import CrawlerProcess
 import logging
 from scrapy import signals
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+import time
 
+team = "Manchester United"
 class PlayerAssistSpider(scrapy.Spider):
     name = "player_assist"
 
@@ -40,7 +47,7 @@ class PlayerFoulsDrawnSpider(scrapy.Spider):
             yield {'player': player, 'fouls_drawn': foul}
 
 
-team = "Liverpool"
+
 
 
 def Name(t_n):
@@ -192,8 +199,7 @@ def SocialMediaHandles(t_n):
             team_inst = "https://" + info.get("strInstagram")
     return f"{team_facebook}\n{team_twitter}\n{team_inst}"
 
-# def SocialMediaEngagementMetrics(t_n):
-#     return "SocialMediaEngagementMetrics by func"
+
 
 # def NewsOutlets(t_n):
 #     return "NewsOutlets by func"
@@ -290,8 +296,6 @@ def Traditions(t_n):
     return team_desc
     
 
-# def FanEngagementInitiatives(t_n):
-#     return "FanEngagementInitiatives by func"
 
 def TV_RadioBroadcasters(t_n):
     lst_of_broadcast = []
@@ -361,8 +365,7 @@ def HistoricalSignificance(t_n):
 
     return lst_image
 
-# def SymbolismAndIconography(t_n):
-#     return "SymbolismAndIconography by func"
+
 
 def LegendaryPlayers(t_n):
     dct_of_player = {}
@@ -436,8 +439,7 @@ def Coaches_Managers(t_n):
         dct_of_coach[name] = took_image(name)
     return dct_of_coach
 
-# def Owners_Executives(t_n):
-#     return "Owners/Executives by func"
+
 
 def CharitableInitiatives(t_n):
     chat_completion = client_2.chat.completions.create(
@@ -459,11 +461,6 @@ def CharitableInitiatives(t_n):
         
     return team_desc
 
-# def YouthDevelopmentPrograms(t_n):
-#     return "YouthDevelopmentPrograms by func"
-
-# def StadiumFeatures(t_n):
-#     return "StadiumFeatures by func"
 
 def PreGameRituals(t_n):
     lst_of_rituals = []
@@ -495,8 +492,7 @@ def PreGameRituals(t_n):
 
     return(lst_of_rituals)
 
-# def ConcessionOptions(t_n):
-#     return "ConcessionOptions by func"
+
 
 def RecentPerformance(t_n):
     def get_team_api_info(t_n):
@@ -614,26 +610,6 @@ def PlayerFoulsDrawn(team_name):
     return results
 
 
-
-
-# def PlayerTacklesMade(t_n):
-#     return "PlayerTacklesMade by func"
-
-# def FantasyFootballRankings(t_n):
-#     return "FantasyFootballRankings by func"
-
-# def StrengthOfSchedule(t_n):
-#     return "StrengthOfSchedule by func"
-
-# def BoomOutlierPlayers(t_n):
-#     return "BoomOutlierPlayers by func"
-
-# def TeamMascot(t_n):
-#     return "TeamMascot by func"
-
-
-
-
 def SpecialEvents(t_n):
     def get_team_api_info(t_n):
         url = f"https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t={t_n}"
@@ -663,20 +639,6 @@ def SpecialEvents(t_n):
             return events
     return "<p>No match data available.</p>"
 
-# def FanForumsAndCommunities(t_n):
-#     url = f"https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t={team}"
-    
-#     response = requests.get(url)
-        
-#     if response.status_code == 200:
-#         data = response.json()
-#         if data.get("teams"):
-#             info = data["teams"][0]
-#             team_website = info.get("strWebsite")
-#             team_facebook = info.get("strFacebook")
-#             team_twitter = info.get("strTwitter")
-#             team_inst = info.get("strInstagram")
-#     return team_website,team_facebook,team_twitter,team_inst
 
 def FamousFans(t_n):
     chat_completion = client_2.chat.completions.create(
@@ -708,8 +670,6 @@ def PreferredFormation(t_n):
     images = soup.select("div img")
     return images[1]["src"]
 
-# def TacticalStyle(t_n):
-#     return "TacticalStyle by func"
 
 def SetPieceTactics(t_n):
     chat_completion = client_2.chat.completions.create(
@@ -731,22 +691,21 @@ def SetPieceTactics(t_n):
         
     return team_desc
 
-# def NotableTacticalChanges(t_n):
-#     return "NotableTacticalChanges by func"
+
 
 def CurrentHeadCoach_Manager(t_n):
   
     search_query = f"{t_n} current head coach"
-    params = {"q": search_query, "tbm": "nws"}  # Використання пошуку новин для кращого результату
+    params = {"q": search_query, "tbm": "nws"}  
     response = requests.get("https://www.google.com/search", params=params, timeout=30)
     
     if response.status_code != 200:
         return None, None
     
     soup = bs(response.content, "html.parser")
-    name_element = soup.select_one(".BNeawe.s3v9rd.AP7Wnd")  # Пошук першого релевантного текстового результату
+    name_element = soup.select_one(".BNeawe.s3v9rd.AP7Wnd")  
     
-    image_params = {"q": f"{t_n} current head coach", "tbm": "isch"}  # Пошук зображень
+    image_params = {"q": f"{t_n} current head coach", "tbm": "isch"} 
     image_response = requests.get("https://www.google.com/search", params=image_params, timeout=30)
     
     if image_response.status_code != 200:
@@ -760,18 +719,6 @@ def CurrentHeadCoach_Manager(t_n):
     
     return coach_name, coach_image
  
-
-   
-
-# def AssistantCoaches(t_n):
-#     return "AssistantCoaches by func"
-
-
-# def PreviousNotableManagers(t_n):
-#     return "PreviousNotableManagers by func"
-
-# def ManagerialPhilosophy(t_n):
-#     return "ManagerialPhilosophy by func"
 
 def EstimatedTeamValue(t_n):
     chat_completion = client_2.chat.completions.create(
@@ -812,44 +759,170 @@ def MajorSponsors(t_n):
     team_desc = chat_completion.choices[0].message.content
         
     return team_desc
-# def KitManufacturer(t_n):
-#     return "KitManufacturer by func"
 
-# def TicketPrices(t_n):
-#     return "TicketPrices by func"
 
-# def AttendanceRecords(t_n):
-#     return "AttendanceRecords by func"
+def TicketPrices(t_n):
+    options = Options()
+    options.add_argument('--headless')  
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
 
-# def MajorTrophies(t_n):
-#     return "MajorTrophies by func"
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
-# def ClubLegends(t_n):
-#     return "ClubLegends by func"
+    try:
+        search_url = f"https://www.ticketsonsale.com/sports/{t_n}"
+        driver.get(search_url)
+        time.sleep(3)  
 
-# def RecordsAndMilestones(t_n):
-#     return "RecordsAndMilestones by func"
+        events = driver.find_elements(By.CSS_SELECTOR, "a.chakra-link")
+        result = []
 
-# def EsotericRules(t_n):
-#     return "EsotericRules by func"
+        for event in events:
+            try:
+                title = event.find_element(By.CSS_SELECTOR, "h2.chakra-text").text
+                date_parts = event.find_elements(By.CSS_SELECTOR, "div.css-13o4zoj p.chakra-text")
+                date = " ".join([d.text for d in date_parts])
+                location = event.find_element(By.CSS_SELECTOR, "p.css-1hdda8r").text
+                link = event.get_attribute('href')
 
-# def TeamCharityWork(t_n):
-#     return "TeamCharityWork by func"
+                result.append({
+                    "title": title,
+                    "date": date,
+                    "location": location,
+                    "link": link
+                })
+            except Exception as e:
+                continue
 
-# def SocialResponsibilityInitiatives(t_n):
-#     return "SocialResponsibilityInitiatives by func"
+        return result[:3]
+    finally:
+        driver.quit()
 
-# def YouthAcademy(t_n):
-#     return "YouthAcademy by func"
+def AttendanceRecords(t_n):
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Return shortly Attendance Records of this team {t_n} 
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
 
-# def IconicMemes(t_n):
-#     return "IconicMemes by func"
+    team_desc = chat_completion.choices[0].message.content
+        
+    return team_desc
 
-# def PopularSocialMediaReactions(t_n):
-#     return "PopularSocialMediaReactions by func"
 
-# def FanMadeContent(t_n):
-#     return "FanMadeContent by func"
+def RecordsAndMilestones(t_n):
+    chat_completion = client_2.chat.completions.create(
+        messages=[
+            {
+                "role": "system",
+                "content": "You are a helpful sport assistant."
+            },
+            {
+                "role": "user",
+                "content": f"""Return shortly Records And Milestones of this team {t_n} 
+                """,
+            }
+        ],
+        model="llama-3.3-70b-versatile",
+    )
+
+    team_desc = chat_completion.choices[0].message.content
+        
+    return team_desc
+
+
+def IconicMemes(t_n):
+    lst_image = []
+    promt = f"{t_n} Iconic memes"
+    params = {"q" : promt , "tbm" : "isch",}
+    html = requests.get("https://www.google.com/search",params=params,timeout=30)
+    html.text
+    soup = bs(html.content,features="html.parser")
+    images = soup.select("div img")
+    
+    lst_image.append(images[1]["src"])
+    lst_image.append( images[2]["src"])
+    lst_image.append(images[3]["src"])
+    lst_image.append(images[4]["src"])
+    lst_image.append(images[5]["src"])
+
+    return lst_image
+
+def PopularSocialMediaReactions(t_n):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    }
+
+    search_query = f"{t_n} popular social media reactions"
+    params = {"q": search_query, "tbm": "nws"}  
+    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
+
+    if response.status_code != 200:
+        return None, None, None
+
+    soup = bs(response.content, "html.parser")
+    reaction_element = soup.select_one(".BNeawe.s3v9rd.AP7Wnd")
+
+    image_params = {"q": search_query, "tbm": "isch"} 
+    image_response = requests.get("https://www.google.com/search", params=image_params, headers=headers, timeout=30)
+
+    if image_response.status_code != 200:
+        return None, None, None
+
+    image_soup = bs(image_response.content, "html.parser")
+    images = image_soup.select("img")
+
+    news_list = []
+    news_items = soup.select("div.dbsr")
+    for item in news_items[:3]:
+        title = item.select_one("div.JheGif.nDgy9d")
+        link = item.a["href"]
+        if title and link:
+            news_list.append({"title": title.text, "link": link})
+
+    reaction_text = reaction_element.text if reaction_element else "No reaction found"
+    image_url = images[1]["src"] if len(images) > 1 else None
+
+    return reaction_text, image_url, news_list
+
+def FanMadeContent(t_n):
+    lst_of_top_moments = []
+    query = f"fan made content  {t_n} "
+
+    params = {
+        "q": query,
+        "tbm": "vid"  
+    }
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+    }
+
+    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
+
+    if "detected unusual traffic" in response.text.lower():
+        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
+    else:
+        soup = bs(response.text, "html.parser")
+
+        video_links = [a["href"] for a in soup.select("a") if a.has_attr("href") and "youtube.com" in a["href"]]
+
+        if video_links:
+
+            for link in video_links[:5]:  
+                
+                lst_of_top_moments.append(link)
+
+    return(lst_of_top_moments)
 
 
 def extract_numbers_from_text(text):
@@ -861,29 +934,29 @@ with open("/home/volodymyrkyba/work/sport_ai/backend/source_data.json", "r", enc
     dict_of_point = json.load(file)
 
 
-# def get_team_ai_info(team,dict_of_point):
+def get_team_ai_info(team,dict_of_point):
             
-#     messages = [
-#         {
-#             "role": "system",
-#             "content": (
-#                 "You are a helpful sport assistant"
-#             ),
-#         },
-#         {   
-#             "role": "user",
-#             "content": (
-#                 f"""I'm creating a web page that would provide information about a sports team for someone going to a meeting with their boss or friends to stay up to date on the topic. Also choose songs I have a list of key features  so choose the ones that best fit the team {team} Here we have list {dict_of_point},
-#                 return only serial number of features
-#                 """
-#             ),
-#         },
-#     ]
+    messages = [
+        {
+            "role": "system",
+            "content": (
+                "You are a helpful sport assistant"
+            ),
+        },
+        {   
+            "role": "user",
+            "content": (
+                f"""I'm creating a web page that would provide information about a sports team for someone going to a meeting with their boss or friends to stay up to date on the topic. Also choose songs I have a list of key features  so choose the ones that best fit the team {team} Here we have list {dict_of_point},
+                return only serial number of features
+                """
+            ),
+        },
+    ]
         
-#     team_desc = client.chat.completions.create(
-#     model="sonar-pro",
-#     messages=messages,)
-#     return team_desc.choices[0].message.content
+    team_desc = client.chat.completions.create(
+    model="sonar-pro",
+    messages=messages,)
+    return team_desc.choices[0].message.content
 
 
 
@@ -912,14 +985,14 @@ with open("/home/volodymyrkyba/work/sport_ai/backend/source_data.json", "r", enc
 
 
 
-# lst_of_point = extract_numbers_from_text(get_team_ai_info(team,dict_of_point))
-# print(lst_of_point)
-# for number in lst_of_point:
-#     feature = dict_of_point.get(str(number))
+lst_of_point = extract_numbers_from_text(get_team_ai_info(team,dict_of_point))
+print(lst_of_point)
+for number in lst_of_point:
+    feature = dict_of_point.get(str(number))
     
-#     if feature in globals(): 
+    if feature in globals(): 
         
-#         print(globals()[feature](team))
+        print(globals()[feature](team))
 
 
 
@@ -933,4 +1006,10 @@ with open("/home/volodymyrkyba/work/sport_ai/backend/source_data.json", "r", enc
 # print(PlayerAssists("Barcelona"))
 # print(PreferredFormation("Barcelona"))
 # print(EstimatedTeamValue("Barcelona"))
-print(MajorSponsors("Barcelona"))
+# print(MajorSponsors("Barcelona"))
+# print(TicketPrices("Miami Heat"))
+# print(AttendanceRecords("Real Madrid"))
+# print(RecordsAndMilestones("Chelsea"))
+# # print(IconicMemes("Barcelona"))
+# print(PopularSocialMediaReactions("Real Madrid"))
+# print(FanMadeContent("Barcelona"))

@@ -985,14 +985,14 @@ def get_team_ai_info(team,dict_of_point):
 
 
 
-lst_of_point = extract_numbers_from_text(get_team_ai_info(team,dict_of_point))
-print(lst_of_point)
-for number in lst_of_point:
-    feature = dict_of_point.get(str(number))
+# lst_of_point = extract_numbers_from_text(get_team_ai_info(team,dict_of_point))
+# print(lst_of_point)
+# for number in lst_of_point:
+#     feature = dict_of_point.get(str(number))
     
-    if feature in globals(): 
+#     if feature in globals(): 
         
-        print(globals()[feature](team))
+#         print(globals()[feature](team))
 
 
 
@@ -1013,3 +1013,31 @@ for number in lst_of_point:
 # # print(IconicMemes("Barcelona"))
 # print(PopularSocialMediaReactions("Real Madrid"))
 # print(FanMadeContent("Barcelona"))
+print(PlayerAssists("Real Madrid"))
+print(TicketPrices("Real Madrid"))
+
+
+
+# def get_full_team_info(team_name: str):
+#     with open("/home/volodymyrkyba/work/sport_ai/backend/source_data.json", "r", encoding="utf-8") as file:
+#         dict_of_point = json.load(file)
+
+#     lst_of_point = extract_numbers_from_text(get_team_ai_info(team_name, dict_of_point))
+#     print(lst_of_point)
+
+#     result = {}
+#     for number in lst_of_point:
+#         feature = dict_of_point.get(str(number))
+#         if feature in globals():
+#             try:
+#                 result[feature] = globals()[feature](team_name)
+#             except Exception as e:
+#                 result[feature] = f"Error: {str(e)}"
+
+#     return result
+
+# result = (get_full_team_info("Miami Heat"))
+# with open("miamiheat_info.json", "w", encoding="utf-8") as file:
+#     json.dump(result, file, ensure_ascii=False, indent=4)
+
+# print("✅ Файл збережено")

@@ -1,1 +1,64 @@
 
+# def MajorTrophies(t_n):
+#     return "MajorTrophies by func"
+
+# def ClubLegends(t_n):
+#     return "ClubLegends by func"
+
+# def KitManufacturer(t_n):
+#     return "KitManufacturer by func"
+
+# def AssistantCoaches(t_n):
+#     return "AssistantCoaches by func"
+
+
+# def PreviousNotableManagers(t_n):
+#     return "PreviousNotableManagers by func"
+
+# def ManagerialPhilosophy(t_n):
+#     return "ManagerialPhilosophy by func"
+
+# def NotableTacticalChanges(t_n):
+#     return "NotableTacticalChanges by func"
+
+
+# def FanForumsAndCommunities(t_n):
+#     
+
+# def PlayerTacklesMade(t_n):
+#     return "PlayerTacklesMade by func"
+
+# def FantasyFootballRankings(t_n):
+#     return "FantasyFootballRankings by func"
+
+# def StrengthOfSchedule(t_n):
+#     return "StrengthOfSchedule by func"
+
+# def BoomOutlierPlayers(t_n):
+#     return "BoomOutlierPlayers by func"
+
+# def TeamMascot(t_n):
+#     return "TeamMascot by func"
+
+# def ConcessionOptions(t_n):
+#     return "ConcessionOptions by func"
+
+
+# def YouthDevelopmentPrograms(t_n):
+#     return "YouthDevelopmentPrograms by func"
+
+# def StadiumFeatures(t_n):
+#     return "StadiumFeatures by func"
+
+# def Owners_Executives(t_n):
+#     return "Owners/Executives by func"
+
+
+# def SymbolismAndIconography(t_n):
+#     return "SymbolismAndIconography by func"
+
+# def FanEngagementInitiatives(t_n):
+#     return "FanEngagementInitiatives by func"
+
+# def SocialMediaEngagementMetrics(t_n):
+#     return "SocialMediaEngagementMetrics by func"

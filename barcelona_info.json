@@ -1,0 +1,43 @@
+{
+    "Name": "Barcelona",
+    "Nickname": "Barça, Blaugrana, Culés",
+    "FoundingYear": "1899",
+    "Location": "Barcelona",
+    "League_Division": [
+        "Spanish La Liga",
+        "Copa del Rey",
+        "Supercopa de Espana",
+        "UEFA Champions League",
+        "Club Friendlies"
+    ],
+    "Stadium_VenueName": "Stadium Name: Estadi Olímpic Lluís Companys\nAddress: Carrer de l&apos;Estadi\nCity: Barcelona\nCapacity: 55926\nSurface: grass\nImage: https://media.api-sports.io/football/venues/19939.png",
+    "TeamColors": [
+        "#004d98",
+        "#004d98",
+        "#a50044"
+    ],
+    "OfficialWebsite": "https://www.fcbarcelona.com",
+    "MajorAchievements": "Barcelona is a Spanish professional football club with many major achievements, including:\n\n* 26 La Liga titles\n* 30 Copa del Rey titles\n* 5 UEFA Champions League titles\n* 3 FIFA Club World Cup titles\n* 3 UEFA Super Cup titles\n\nThey are one of the most successful and beloved football clubs in the world.",
+    "HistoricalRivals": "Barcelona's main historical rivals are:\n\n1. Real Madrid (El Clásico)\n2. Espanyol (Derbi barceloní)\n3. Athletic Bilbao (historic rivalry due to Catalan and Basque cultural ties)",
+    "Songs": [
+        "https://www.youtube.com/watch?v=zeUOdHWzUn0",
+        "https://www.youtube.com/watch?v=zeUOdHWzUn0",
+        "https://www.youtube.com/watch?v=zNWp6om10o0",
+        "https://www.youtube.com/watch?v=lljPPACRdBw",
+        "https://www.youtube.com/watch?v=HC0hwsR3D0s"
+    ],
+    "HistoricalSignificance": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFvD06TUCp22yZsg1GsqcSBxI_ePo8_V8e_jQ-n5GEsj7OgrEiUucIgPsDgw&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-7FKMqA-vBlgg053lUB2_xOaIBdyVg4auu94B6RDDVby7vWdPsu_5YH0Ldw&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFu2xs3AIHCBHmN5TUrEFHNVQovrgGXuR0BLQohziu732Ak6WGTAFRasYeCw&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWXhTMb0bdjdZ3rTF33k3QBXN0S3qU8RTo_YbsI4l0OtCXLYkvck7DpdQgnYU&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAE2KbOryOIKie3yTpWOoNEHUeqkduh-maIcGJlNT7H6FT1fYEnbT-eAqTT9s&s"
+    ],
+    "LegendaryPlayers": {
+        "Lionel Messi": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqhB77QQDRIcVLuFddffP_3bwO68Pm2rLGO8Xro25vpt5m_lcCs-N9aTR7Wgs&s",
+        "Xavi Hernandez": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsZ2agL5DRn--HKjQXb3Zrqe7Ua_Lzz1LtMXL-vh8JFgAYmBqOMfS9jVHEXA&s",
+        "Andres Iniesta": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6_rlgSqIIdUP9aiRJR5oz7IM0f_okQG2F3j4E4hW1Wek376uDchfHU9uRqg&s"
+    },
+    "RecentPerformance": "<h3>📅 Last 5 Matches:</h3><table border='1' style='width:100%; text-align:center;'><tr><th>Date</th><th>Home</th><th>Score</th><th>Away</th></tr><tr><td>2025-03-30</td><td>Barcelona</td><td>4-1</td><td>Girona</td></tr><tr><td>2025-03-27</td><td>Barcelona</td><td>3-0</td><td>Osasuna</td></tr><tr><td>2025-03-11</td><td>Barcelona</td><td>3-1</td><td>Benfica</td></tr><tr><td>2025-03-02</td><td>Barcelona</td><td>4-0</td><td>Real Sociedad</td></tr><tr><td>2025-02-25</td><td>Barcelona</td><td>4-4</td><td>Atletico Madrid</td></tr></table>",
+    "RecordsAndMilestones": "**Barcelona Records and Milestones:**\n\n1. **Most La Liga titles**: 26\n2. **Most Copa del Rey titles**: 31\n3. **Most European Cup/Champions League titles**: 5\n4. **Most consecutive La Liga matches without defeat**: 43 (2017-2018)\n5. **Most goals scored in a season**: 115 (2015-2016)\n6. **Largest margin of victory**: 10-1 (vs. Gimnàstic, 1949-1950)\n7. **Most consecutive home wins**: 39 (2011-2012)\n\n**Notable Players:**\n\n1. **Lionel Messi**: Most appearances (778), most goals (672), and most hat-tricks (48)\n2. **Xavi Hernandez**: Most appearances (767) and most assists (182)\n3. **Andres Iniesta**: Most titles won (32) and most Champions League appearances (130)"
+}

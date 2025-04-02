@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sport AI</title>
     <link
       rel="stylesheet"
-      href="/home/volodymyrkyba/work/sport_ai/frontend/static/styles/style.css"
+      href="/home/volodymyrkyba/work/sport_ai/frontend/static/styles/styles_2.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script
       src="/home/volodymyrkyba/work/sport_ai/frontend/script.js"
       defer
@@ -15,70 +16,111 @@
   </head>
 
   <body>
-    <div class="main">
-      <div class="left_bar">
-        <header>
-          <div class="pdf">
-            <a href="">main</a>
-          </div>
-          <div class="pdf"><a href="">Examples</a></div>
-          <div class="pdf">
-            <p>Download PDF</p>
-          </div>
-        </header>
-        <div class="center_bar">
-          <div class="info">
-            <div class="big_word">
-              <p>Impress your friends or your <span class="bss">boss!</span></p>
-            </div>
-            <div class="small_word">
-              <p>
-                Just name your favorite team, and I’ll give you all the latest
-                stats, history, and key insights you need to feel confident in
-                any discussion, whether you're chatting with friends or debating
-                with experts!
-              </p>
-            </div>
+    <button id="video_btn" onclick="togglePlayPause()">
+      <img
+        id="playPauseImg"
+        src="/home/volodymyrkyba/work/sport_ai/frontend/static/images/pause.png"
+        alt="Pause"
+      />
+    </button>
 
-            <div class="btn">
-              <div class="ai_btn">
-                <button id="submitBtn">Get Info</button>
-              </div>
-              <div class="inpt">
-                <input
-                  type="text"
-                  id="nameinput"
-                  placeholder="Your team"
-                  required
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="down"></div>
+    <script src="/home/volodymyrkyba/work/sport_ai/frontend/pause_video.js"></script>
+    <header>
+      <div class="page">
+        <a href="/home/volodymyrkyba/work/sport_ai/frontend/index_2.html"
+          >Main</a
+        >
       </div>
-
-      <div class="right_bar">
-        <div class="cont">
-          <a href="">Contact</a>
+      <div class="page">
+        <a href="/home/volodymyrkyba/work/sport_ai/frontend/examples.html"
+          >Examples</a
+        >
+      </div>
+      <div class="page"><a href="#">Technologies</a></div>
+      <div class="page"><a href="#">Download</a></div>
+    </header>
+    <div class="video_block">
+      <video
+        id="back_video"
+        autoplay
+        loop
+        muted
+        playsinline
+        src="/home/volodymyrkyba/work/sport_ai/frontend/static/videos/The 5 Elements of a Great Promotional Sports Video.mp4"
+      ></video>
+      <!-- <img
+        src="/home/volodymyrkyba/work/sport_ai/frontend/static/images/360_F_390661775_BY3omV6LTS2064GbghxN9MBxgp4oV67W.jpg"
+        alt=""
+      /> -->
+    </div>
+    <script src=""></script>
+    <div class="next-section">
+      <div class="info">
+        <div class="big_word">
+          <p cl>Sport AI</p>
         </div>
-        <div class="img_d">
-          <img
-            class="img_dd"
-            src="/home/volodymyrkyba/work/sport_ai/frontend/static/images/openart-4eb3a299-2d18-4497-9c68-4be4ee72852d.png"
-            alt=""
-          />
+        <div class="small_word">
+          <p class="tt">Just name your favorite team</p>
+        </div>
+        <div class="btn">
+          <div class="ai_btn">
+            <button id="submitBtn">Push</button>
+          </div>
+          <div class="inpt">
+            <input
+              type="text"
+              id="nameinput"
+              placeholder="Your team"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="banner">
+        <img id="bannerImage" src="" alt="" />
+      </div>
+      <div id="pdf" class="answer">
+        <div class="left_bar">
+          <div class="logo_bar">
+            <img id="logoImage" src="" alt="" />
+          </div>
+          <p id="year"></p>
+          <div class="site_bar">
+            <a id="website" href="" target="_blank"></a>
+            <a id="facebook" href="" target="_blank"></a>
+            <a id="twitter" href="" target="_blank"></a>
+            <a id="instagram" href="" target="_blank"></a>
+          </div>
+          <div class="form_bar">
+            <img id="uniform" src="" alt="" />
+          </div>
+          <!-- <div id="saveButton" class="buttom_bar">
+            <button>Download PDF</button>
+          </div> -->
+        </div>
+        <div class="right_bar">
+          <div class="name">
+            <p id="nickNameDisplay"></p>
+          </div>
+          <div class="ai_info">
+            <p id="response"></p>
+          </div>
+          <div id="l_5_events"></div>
         </div>
       </div>
     </div>
-    <div class="bottom">
-      <div class="team_name">
-        <p id="team_name">Info about yor team</p>
-      </div>
-      <div class="answer">
-        <p id="response"></p>
-      </div>
-    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="/home/volodymyrkyba/work/sport_ai/frontend/scroll.js"></script>
   </body>
 </html>

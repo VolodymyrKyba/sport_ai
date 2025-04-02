@@ -171,8 +171,8 @@ video {
 .answer {
   margin-top: 40px;
   padding: 20px;
-  display: grid;
-  grid-template-columns: 30% 70%;
+  display: flex;
+  flex-direction: column;
   border-radius: 60px;
   background-color: rgb(255, 255, 255);
   width: 40%;
@@ -180,21 +180,6 @@ video {
   border-style: solid;
   border-color: rgb(0, 0, 0);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.left_bar {
-  display: flex;
-  flex-direction: column;
-  /* padding-top: 30px; */
-}
-
-.form_bar {
-  margin-top: 20px;
-  display: flex;
-  width: 100%;
-  height: 200px;
-  justify-content: center;
-  align-items: center;
 }
 
 .info_bar {

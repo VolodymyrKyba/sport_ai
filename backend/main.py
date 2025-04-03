@@ -158,7 +158,7 @@ def TeamColors(t_n):
         data = response.json()
         if data.get("teams"):
             info = data["teams"][0]
-            for i in range(1, 8):  # Check leagues from strLeague to strLeague7
+            for i in range(1, 8):  
                 league_key = f"strColour{i}" if i == 1 else f"strColour{i-1}"
                 league_value = info.get(league_key)
                 if league_value and league_value != "":
@@ -250,34 +250,24 @@ def HistoricalRivals(t_n):
     return team_desc
 
 def Songs(t_n):
-    lst_of_songs = []
-    query = f"{t_n} fan songs"
-
-    params = {
-        "q": query,
-        "tbm": "vid"  
-    }
-
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-    }
-
-    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
-
-    if "detected unusual traffic" in response.text.lower():
-        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
-    else:
-        soup = bs(response.text, "html.parser")
-
-        video_links = [a["href"] for a in soup.select("a") if a.has_attr("href") and "youtube.com" in a["href"]]
-
-        if video_links:
-
-            for link in video_links[:5]:  
-                
-                lst_of_songs.append(link)
-
-    return(lst_of_songs)
+    options = Options()
+    options.add_argument('--headless')  
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    try:
+        search_url = f"https://www.youtube.com/results?search_query= official {t_n} anthem"
+        driver.get(search_url)
+        time.sleep(3)  
+        video_elements = driver.find_elements(By.ID, 'video-title')
+        video_links = []
+        video =  video_elements[0]
+        link = video.get_attribute('href')
+        if link:
+            video_links.append(link)
+        return video_links
+    finally:
+        driver.quit()
 
 def Traditions(t_n):
     chat_completion = client_2.chat.completions.create(
@@ -302,34 +292,24 @@ def Traditions(t_n):
 
 
 def TV_RadioBroadcasters(t_n):
-    lst_of_broadcast = []
-    query = f"{t_n} broadcast"
-
-    params = {
-        "q": query,
-        "tbm": "vid"  
-    }
-
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-    }
-
-    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
-
-    if "detected unusual traffic" in response.text.lower():
-        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
-    else:
-        soup = bs(response.text, "html.parser")
-
-        video_links = [a["href"] for a in soup.select("a") if a.has_attr("href") and "youtube.com" in a["href"]]
-
-        if video_links:
-
-            for link in video_links[:5]:  
-                
-                lst_of_broadcast.append(link)
-
-    return(lst_of_broadcast)
+    options = Options()
+    options.add_argument('--headless')  
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    try:
+        search_url = f"https://www.youtube.com/results?search_query=broadcast{t_n}"
+        driver.get(search_url)
+        time.sleep(3)  
+        video_elements = driver.find_elements(By.ID, 'video-title')
+        video_links = []
+        for video in video_elements[:3]:  
+            link = video.get_attribute('href')
+            if link:
+                video_links.append(link)
+        return video_links
+    finally:
+        driver.quit()
 
 def Playing_Styles(t_n):
     chat_completion = client_2.chat.completions.create(
@@ -467,34 +447,24 @@ def CharitableInitiatives(t_n):
 
 
 def PreGameRituals(t_n):
-    lst_of_rituals = []
-    query = f"{t_n} Pre Game Rituals"
-
-    params = {
-        "q": query,
-        "tbm": "vid"  
-    }
-
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-    }
-
-    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
-
-    if "detected unusual traffic" in response.text.lower():
-        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
-    else:
-        soup = bs(response.text, "html.parser")
-
-        video_links = [a["href"] for a in soup.select("a") if a.has_attr("href") and "youtube.com" in a["href"]]
-
-        if video_links:
-
-            for link in video_links[:5]:  
-                
-                lst_of_rituals.append(link)
-
-    return(lst_of_rituals)
+    options = Options()
+    options.add_argument('--headless')  
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    try:
+        search_url = f"https://www.youtube.com/results?search_query=pre game rituals{t_n}"
+        driver.get(search_url)
+        time.sleep(3)  
+        video_elements = driver.find_elements(By.ID, 'video-title')
+        video_links = []
+        for video in video_elements[:3]:  
+            link = video.get_attribute('href')
+            if link:
+                video_links.append(link)
+        return video_links
+    finally:
+        driver.quit()
 
 
 
@@ -548,34 +518,24 @@ def HistoricalStatistics(t_n):
     return team_desc
 
 def PlayerGoals(t_n):
-    lst_of_top_moments = []
-    query = f"{t_n} Top goal and moments"
-
-    params = {
-        "q": query,
-        "tbm": "vid"  
-    }
-
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-    }
-
-    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
-
-    if "detected unusual traffic" in response.text.lower():
-        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
-    else:
-        soup = bs(response.text, "html.parser")
-
-        video_links = [a["href"] for a in soup.select("a") if a.has_attr("href") and "youtube.com" in a["href"]]
-
-        if video_links:
-
-            for link in video_links[:5]:  
-                
-                lst_of_top_moments.append(link)
-
-    return(lst_of_top_moments)
+    options = Options()
+    options.add_argument('--headless')  
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    try:
+        search_url = f"https://www.youtube.com/results?search_query=top goals and moments {t_n}"
+        driver.get(search_url)
+        time.sleep(3)  
+        video_elements = driver.find_elements(By.ID, 'video-title')
+        video_links = []
+        for video in video_elements[:3]:  
+            link = video.get_attribute('href')
+            if link:
+                video_links.append(link)
+        return video_links
+    finally:
+        driver.quit()
 
  
 
@@ -594,7 +554,7 @@ def PlayerAssists(t_n):
     process.crawl(crawler, team=t_n)
     process.start()
 
-    return results
+    return results[0]
 
 def PlayerFoulsDrawn(team_name):
     logging.getLogger('scrapy').setLevel(logging.WARNING)
@@ -611,7 +571,7 @@ def PlayerFoulsDrawn(team_name):
     process.crawl(crawler, team=team_name)
     process.start()
 
-    return results
+    return results[0]
 
 
 def SpecialEvents(t_n):
@@ -653,7 +613,7 @@ def FamousFans(t_n):
             },
             {
                 "role": "user",
-                "content": f"""Tell me famous fans of this team {t_n} 
+                "content": f"""Tell me shortly name of  famous fans of this team {t_n} 
                 """,
             }
         ],
@@ -699,29 +659,13 @@ def SetPieceTactics(t_n):
 
 def CurrentHeadCoach_Manager(t_n):
   
-    search_query = f"{t_n} current head coach"
-    params = {"q": search_query, "tbm": "nws"}  
-    response = requests.get("https://www.google.com/search", params=params, timeout=30)
-    
-    if response.status_code != 200:
-        return None, None
-    
-    soup = bs(response.content, "html.parser")
-    name_element = soup.select_one(".BNeawe.s3v9rd.AP7Wnd")  
-    
-    image_params = {"q": f"{t_n} current head coach", "tbm": "isch"} 
-    image_response = requests.get("https://www.google.com/search", params=image_params, timeout=30)
-    
-    if image_response.status_code != 200:
-        return None, None
-    
-    image_soup = bs(image_response.content, "html.parser")
-    images = image_soup.select("div img")
-    
-    coach_name = name_element.text if name_element else "Unknown"
-    coach_image = images[1]["src"] if len(images) > 1 else None
-    
-    return coach_name, coach_image
+    promt = f"{t_n} current coach"
+    params = {"q" : promt , "tbm" : "isch",}
+    html = requests.get("https://www.google.com/search",params=params,timeout=30)
+    html.text
+    soup = bs(html.content,features="html.parser")
+    images = soup.select("div img")
+    return images[1]["src"]
  
 
 def EstimatedTeamValue(t_n):
@@ -899,52 +843,33 @@ def PopularSocialMediaReactions(t_n):
     return reaction_text, image_url, news_list
 
 def FanMadeContent(t_n):
-    lst_of_top_moments = []
-    query = f"fan made content  {t_n} "
-
-    params = {
-        "q": query,
-        "tbm": "vid"  
-    }
-
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-    }
-
-    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
-
-    if "detected unusual traffic" in response.text.lower():
-        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
-    else:
-        soup = bs(response.text, "html.parser")
-
-        video_links = [a["href"] for a in soup.select("a") if a.has_attr("href") and "youtube.com" in a["href"]]
-
-        if video_links:
-
-            for link in video_links[:5]:  
-                
-                lst_of_top_moments.append(link)
-
-    return(lst_of_top_moments)
+    options = Options()
+    options.add_argument('--headless')  
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    try:
+        search_url = f"https://www.youtube.com/results?search_query=fan made content {t_n}"
+        driver.get(search_url)
+        time.sleep(3)  
+        video_elements = driver.find_elements(By.ID, 'video-title')
+        video_links = []
+        for video in video_elements[:3]:  
+            link = video.get_attribute('href')
+            if link:
+                video_links.append(link)
+        return video_links
+    finally:
+        driver.quit()
 
 
-app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  
-    allow_credentials=True,
-    allow_methods=["*"],  
-    allow_headers=["*"],  
-)
-class UserInput(BaseModel):
-    name: str = Field(..., example="Johsdn")
 
 def get_team_ai_info(team,dict_of_point):
             
     messages = [
         {
+            
             "role": "system",
             "content": (
                 "You are a helpful sport assistant"
@@ -963,6 +888,7 @@ def get_team_ai_info(team,dict_of_point):
     model="sonar-pro",
     messages=messages,)
     return team_desc.choices[0].message.content
+
 # def get_team_ai_info(team,dict_of_point):
             
 #     messages = [
@@ -1024,37 +950,52 @@ def get_full_team_info(team_name: str):
     with open("/home/volodymyrkyba/work/sport_ai/backend/source_data.json", "r", encoding="utf-8") as file:
         dict_of_point = json.load(file)
 
-    lst_of_point = extract_numbers_from_text(get_team_ai_info(team_name, dict_of_point))
-    print(lst_of_point)
+    # lst_of_point = extract_numbers_from_text(get_team_ai_info(team_name, dict_of_point))
+    # print(lst_of_point)
 
     result = {}
-    for number in lst_of_point:
+    # for number in lst_of_point:
+    for number in range(1,42):
         feature = dict_of_point.get(str(number))
         if feature in globals():
             try:
+                print(number,feature)
+                print("________________________________________________________")
+                print(globals()[feature](team_name))
                 result[feature] = globals()[feature](team_name)
             except Exception as e:
                 result[feature] = f"Error: {str(e)}"
 
     return result
 
-team = "Real Madrid"
-result = (get_full_team_info(team))
-with open(f"{team}.json", "w", encoding="utf-8") as file:
-    json.dump(result, file, ensure_ascii=False, indent=4)
+# team = "Chelsea"
+# result = (get_full_team_info(team))
+# with open(f"{team}.json", "w", encoding="utf-8") as file:
+#     json.dump(result, file, ensure_ascii=False, indent=4)
 
 
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
+)
+class UserInput(BaseModel):
+    name: str = Field(..., example="Johsdn")
+
+@app.post("/team_info")
+async def receive_team_info(user: UserInput):
+    team_name = user.name
+    print(team_name)
+    try:
+        result = get_full_team_info(team_name)
+        return JSONResponse(content={"team_info": result})
+    except Exception as e:
+        return JSONResponse(content={"error": str(e)}, status_code=500)
 
 
-# @app.post("/team_info")
-# async def receive_team_info(user: UserInput):
-#     team_name = user.name
-#     try:
-#         result = get_full_team_info(team_name)
-#         return JSONResponse(content={"team_info": result})
-#     except Exception as e:
-#         return JSONResponse(content={"error": str(e)}, status_code=500)
-
-
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="127.0.0.1", port=8000)
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000)

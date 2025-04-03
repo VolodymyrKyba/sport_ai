@@ -1,0 +1,101 @@
+{
+    "Name": "Manchester United",
+    "Nickname": "The Red Devils, United, The Theatre of Dreams",
+    "FoundingYear": "1878",
+    "Location": "Trafford, Greater Manchester",
+    "League_Division": [
+        "English Premier League",
+        "FA Cup",
+        "EFL Cup",
+        "UEFA Europa League",
+        "Club Friendlies",
+        "FA Community Shield"
+    ],
+    "Stadium_VenueName": "Stadium Name: Old Trafford\nAddress: Sir Matt Busby Way\nCity: Manchester\nCapacity: 76212\nSurface: grass\nImage: https://media.api-sports.io/football/venues/556.png",
+    "TeamColors": [
+        "#DA291C",
+        "#DA291C",
+        "#FBE122",
+        "#000000"
+    ],
+    "Mascot": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEZ48P9oP4EoUjaGVKwspEOMCS97xjNDtsTn1nN4PYTDuyBa8huZtE2I0A4Q&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmmnHNhZg-QEXcQtVkeVtB1-xTnXEt60KUi4MVYs5ufi3JRSCb3nYYac2SUg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReuLXyTAL8kbiB7o--3D-w4JyEOzAOu9ZvNNT3C51P0-MshRsXD0EFXz7wjA&s"
+    ],
+    "OfficialWebsite": "https://www.manutd.com",
+    "SocialMediaHandles": "https://www.facebook.com/manchesterunited\nhttps://twitter.com/manutd\nhttps://www.instagram.com/manchesterunited",
+    "MajorAchievements": "Manchester United's major achievements include:\n\n1. 20 English League titles\n2. 3 European Cups\n3. 1 UEFA Europa League\n4. 1 UEFA Cup Winners' Cup\n5. 1 UEFA Super Cup\n6. 1 Intercontinental Cup\n7. 1 FIFA Club World Cup\n8. 12 FA Cups\n9. 5 League Cups\n\nThey are one of the most successful clubs in English football history.",
+    "HistoricalRivals": "Manchester United's main historical rivals are:\n\n1. Liverpool\n2. Manchester City (Derby rivals)\n3. Leeds United",
+    "Songs": [
+        "https://www.youtube.com/watch?v=RUCn4w-S2KM&pp=ygUWc29uZ3NNYW5jaGVzdGVyIFVuaXRlZA%3D%3D",
+        "https://www.youtube.com/watch?v=xRwttTdy0JI&pp=ygUWc29uZ3NNYW5jaGVzdGVyIFVuaXRlZA%3D%3D",
+        "https://www.youtube.com/watch?v=10dJEJEisaE&pp=ygUWc29uZ3NNYW5jaGVzdGVyIFVuaXRlZA%3D%3D"
+    ],
+    "Traditions": "As a helpful sports assistant, I'd be happy to share with you the top 3 traditions of Manchester United:\n\n1. **The Red Devil Mascot**: Manchester United's iconic mascot is a red devil, which was introduced in the 1960s. The mascot is said to have originated from the team's nickname \"The Red Devils,\" which was coined due to the team's red jerseys and the devilish spirit of the players on the field. The mascot has become an integral part of the team's identity and is often seen entertaining fans at Old Trafford, the team's home stadium.\n\n2. **The Stretford End Singing**: The Stretford End is a legendary stand at Old Trafford, and the fans who sit there are known for their passionate singing and chanting. The Stretford End has been the heart of Manchester United's supporter culture for decades, with fans singing traditional songs like \"Glory, Glory, Man United\" and \"The Busby Babes.\" The singing and chanting create an electric atmosphere at the stadium, which is intimidating for opposing teams and inspiring for the Manchester United players.\n\n3. **The Pre-Match Tradition of Walking Out to \"Glory, Glory, Man United\"**: Before every match at Old Trafford, the Manchester United team walks out onto the field to the sound of \"Glory, Glory, Man United,\" a song that has been associated with the team since the 1950s. The song is sung by the fans as the team takes to the field, and it's a tradition that gets the players pumped up and ready for the match ahead. The song has become an integral part of Manchester United's match-day experience and is a tradition that is cherished by the team and its fans.",
+    "TV_RadioBroadcasters": [
+        "https://www.youtube.com/watch?v=BDhwUCtkGtw&pp=ygUaYnJvYWRjYXN0TWFuY2hlc3RlciBVbml0ZWQ%3D",
+        "https://www.youtube.com/watch?v=2GqO-nGoydE&pp=ygUaYnJvYWRjYXN0TWFuY2hlc3RlciBVbml0ZWTSBwkJvwCDtaTen9Q%3D",
+        "https://www.youtube.com/watch?v=9BoNcOMQ_sc&pp=ygUaYnJvYWRjYXN0TWFuY2hlc3RlciBVbml0ZWQ%3D"
+    ],
+    "Playing_Styles": "Manchester United is known for their attacking and possession-based playing style. They typically play with a 4-2-3-1 formation, focusing on:\n\n* Quick counter-attacks\n* High-pressing to win the ball back\n* Wing play with pacey wingers\n* Creative midfielders to control the tempo\n* Clinical finishing from their strikers\n\nUnder different managers, the team's style has evolved, but the core philosophy remains centered around attacking football and entertaining the fans.",
+    "HistoricalSignificance": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWOJoEx8K5Bb64cplC0odfPx0e_ZSBgoHWLLhNphlawIQiFm1F7LKhESWy1A&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSADLKL6i-9om75N0xGsK5mUOb9-Eyt6dc8Sx78MX7RSycTDClYMErvs3O5E5c&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDp71NGh5ldjmZtvt1mV8bpKN65YjvWtDqHNU4PqHMeg6VYfcf7_CSslbUng&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsvyvBga9C6huD8cNe_V-2AP9mlUCbyVenB0bp4EwnWxg295proOSFc9N_xg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2DUah7ZozU_BBYd4I-wrIAUvMhxm-tGm6QVBNxIstPU5chZ7RuGCSQDiB6w&s"
+    ],
+    "LegendaryPlayers": {
+        "Cristiano Ronaldo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2-SbpoRNCqCsyIJzxcQRwpRaANXpJv9dMpIi8zHxJEm0HjdeUJM3BlAkbocc&s",
+        "Ryan Giggs": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjJsen48XHtR9ZFT3EnYIMP1B9cqN2EWU443ec_6NEsgvP2YIMdkees5IQHq8&s",
+        "Eric Cantona": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvfBf2fJv7oUjDvFJDl0sc15YDdGwXUDakhJjGWpDUzawyKhcVlUpF9F_Ztw&s"
+    },
+    "Coaches_Managers": {
+        "Sir Alex Ferguson": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTuCo1P5KaWiFLQuocXn8l1NqcqgvYcQFXxIDyTdyxmPXwRU86oIkofXkbxQ&s",
+        "Matt Busby": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV6VOQBtqeaSTYuIO3YGNmH95R3WtPPeQFG7JCciu8gH_N3dKZNImyGGFtNpc&s",
+        "Ernest Mangnall": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKSr8a7QXubypPNBMBlIWIhlmjY6cHgaYgVYINjf16PXyXt3r9u8LBlPfAAg&s"
+    },
+    "CharitableInitiatives": "Manchester United is involved in various charitable initiatives, including:\n\n1. **Manchester United Foundation**: Supports disadvantaged youth through football, education, and health programs.\n2. **Charity matches**: The team participates in charity matches to raise funds for various causes.\n3. **Partnering with charities**: Manchester United partners with charities like Unicef, British Red Cross, and Cancer Research UK to support their initiatives.\n4. **Community outreach**: The team engages in community outreach programs, visiting hospitals, schools, and supporting local food banks.\n\nThese initiatives demonstrate Manchester United's commitment to giving back to the community and making a positive impact.",
+    "PreGameRituals": [
+        "https://www.youtube.com/watch?v=HH32ZM0qm2s&pp=ygUhcHJlIGdhbWUgcml0dWFsc01hbmNoZXN0ZXIgVW5pdGVk",
+        "https://www.youtube.com/watch?v=qSpdchq4ujU&pp=ygUhcHJlIGdhbWUgcml0dWFsc01hbmNoZXN0ZXIgVW5pdGVk",
+        "https://www.youtube.com/shorts/TfUmpRnH8A4"
+    ],
+    "RecentPerformance": "<h3>📅 Last 5 Matches:</h3><table border='1' style='width:100%; text-align:center;'><tr><th>Date</th><th>Home</th><th>Score</th><th>Away</th></tr><tr><td>2025-03-13</td><td>Manchester United</td><td>4-1</td><td>Real Sociedad</td></tr><tr><td>2025-03-09</td><td>Manchester United</td><td>1-1</td><td>Arsenal</td></tr><tr><td>2025-03-02</td><td>Manchester United</td><td>1-1</td><td>Fulham</td></tr><tr><td>2025-02-26</td><td>Manchester United</td><td>3-2</td><td>Ipswich</td></tr><tr><td>2025-02-07</td><td>Manchester United</td><td>2-1</td><td>Leicester</td></tr></table>",
+    "HistoricalStatistics": "Manchester United is one of the most successful and iconic football clubs in the world. Here are some historical statistics about the team:\n\n**Domestic Competitions:**\n\n1. **First Division/Premier League:** Manchester United has won the top tier of English football a record 20 times:\n\t* 1908, 1911, 1952, 1956, 1957, 1965, 1967, 1993, 1994, 1996, 1997, 1999, 2000, 2001, 2003, 2007, 2008, 2009, 2011, 2013\n2. **FA Cup:** Manchester United has won the FA Cup a record 12 times:\n\t* 1909, 1948, 1963, 1976, 1983, 1985, 1990, 1994, 1996, 1999, 2004, 2016\n3. **League Cup:** Manchester United has won the League Cup 5 times:\n\t* 1992, 2006, 2009, 2010, 2017\n\n**International Competitions:**\n\n1. **European Cup/Champions League:** Manchester United has won the European Cup/Champions League 3 times:\n\t* 1968, 1999, 2008\n2. **UEFA Cup Winners' Cup:** Manchester United has won the UEFA Cup Winners' Cup 1 time:\n\t* 1991\n3. **UEFA Europa League:** Manchester United has won the UEFA Europa League 1 time:\n\t* 2017\n4. **UEFA Super Cup:** Manchester United has won the UEFA Super Cup 1 time:\n\t* 1999\n5. **FIFA Club World Cup:** Manchester United has won the FIFA Club World Cup 1 time:\n\t* 2008\n6. **Intercontinental Cup:** Manchester United has won the Intercontinental Cup 1 time:\n\t* 1999\n\n**Other Statistics:**\n\n1. **Most appearances:** Ryan Giggs holds the record for most appearances for Manchester United with 963 games.\n2. **Top scorer:** Wayne Rooney is the top scorer for Manchester United with 253 goals.\n3. **Longest unbeaten run:** Manchester United's longest unbeaten run is 45 games, achieved in 1999.\n4. **Biggest win:** Manchester United's biggest win is 10-0 against Anderlecht in 1956.\n5. **Biggest loss:** Manchester United's biggest loss is 7-0 against Liverpool in 1895.\n\n**Managerial Statistics:**\n\n1. **Most successful manager:** Sir Alex Ferguson is the most successful manager in Manchester United's history, winning 38 trophies in 27 years.\n2. **Longest-serving manager:** Sir Matt Busby is the longest-serving manager in Manchester United's history, serving for 24 years.\n\n**Player Statistics:**\n\n1. **Most capped player:** Peter Schmeichel is the most capped player for Manchester United with 129 appearances for Denmark.\n2. **Youngest player:** Duncan Edwards is the youngest player to play for Manchester United, making his debut at 16 years and 185 days.\n3. **Oldest player:** Billy Meredith is the oldest player to play for Manchester United, playing until the age of 46.",
+    "PlayerGoals": [
+        "https://www.youtube.com/watch?v=YPdjiIuT4Qg&pp=ygUndG9wIGdvYWxzIGFuZCBtb21lbnRzIE1hbmNoZXN0ZXIgVW5pdGVk",
+        "https://www.youtube.com/watch?v=53VkfVwYAeA&pp=ygUndG9wIGdvYWxzIGFuZCBtb21lbnRzIE1hbmNoZXN0ZXIgVW5pdGVk",
+        "https://www.youtube.com/watch?v=s0ZOd1ghabU&pp=ygUndG9wIGdvYWxzIGFuZCBtb21lbnRzIE1hbmNoZXN0ZXIgVW5pdGVk"
+    ],
+    "PlayerAssists": "Error: ",
+    "PlayerFoulsDrawn": "Error: ",
+    "SpecialEvents": "<h3>📅 Last 5 Matches:</h3><table border='1' style='width:100%; text-align:center;'><tr><th>Date</th><th>Home</th><th>Score</th><th>Away</th></tr><tr><td>2025-03-13</td><td>Manchester United</td><td>4-1</td><td>Real Sociedad</td></tr><tr><td>2025-03-09</td><td>Manchester United</td><td>1-1</td><td>Arsenal</td></tr><tr><td>2025-03-02</td><td>Manchester United</td><td>1-1</td><td>Fulham</td></tr><tr><td>2025-02-26</td><td>Manchester United</td><td>3-2</td><td>Ipswich</td></tr><tr><td>2025-02-07</td><td>Manchester United</td><td>2-1</td><td>Leicester</td></tr></table>",
+    "FamousFans": "Some famous fans of Manchester United include:\n1. David Beckham \n2. Idris Elba \n3. Liam Gallagher \n4. Eric Cantona",
+    "PreferredFormation": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA-a6DyJelOszL7LM-KdLRQ3zskBA5d7fPElveSjKOGrX962oy5YqY9Sc6IWk&s",
+    "SetPieceTactics": "Manchester United's set piece tactics under Erik ten Hag typically involve:\n\n1. **Corner kicks**: They often use a mix of short and long corners, with the ball being played to the edge of the box or delivered directly into the area.\n2. **Free kicks**: They usually opt for a direct shot or a cross into the box, with players like Bruno Fernandes and Marcus Rashford taking responsibility.\n3. **Throw-ins**: They often use long throw-ins to bypass the opposition's press and launch quick counter-attacks.\n4. **Defending set pieces**: They employ a zonal marking system, with players assigned to specific areas of the box to defend against opposition set pieces.\n\nThese tactics are subject to change based on the team's formation, player availability, and the opponent's strengths and weaknesses.",
+    "CurrentHeadCoach_Manager": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRToh7mV3uwigWO7dcpAQQx2OFHsjYvod_G6S7oZiEiV7oF447HcQQMSjC1IhM&s",
+    "EstimatedTeamValue": "$4.2 billion",
+    "MajorSponsors": "The major sponsors of Manchester United include:\n\n1. AON\n2. Adidas\n3. Chevrolet\n4. Coca-Cola\n5. DHL\n6. EA Sports\n7. Marriott Hotels \n8. TAG Heuer \n9. Visit Malta \n10. Tetley's Beer",
+    "TicketPrices": [],
+    "AttendanceRecords": "Manchester United's attendance records:\n\n- Home stadium: Old Trafford (capacity: 74,310)\n- Average attendance (2020-21): 43,458 (due to COVID-19 restrictions)\n- Highest average attendance (2006-07): 75,826\n- Record attendance: 83,250 (vs. Aston Villa, 1948)",
+    "RecordsAndMilestones": "Manchester United holds numerous records and milestones. Here are a few notable ones:\n\n1. **Most League Titles**: 20 English league titles, a record they share with Liverpool.\n2. **Most FA Cups**: 12 FA Cup wins, a record they share with Arsenal and Liverpool.\n3. **European Success**: 3 European Cup/Champions League titles, 1 UEFA Cup Winners' Cup, 1 UEFA Super Cup, and 1 Intercontinental Cup.\n4. **Longest Unbeaten Run**: 45 matches (1999-2000).\n5. **Biggest Win**: 10-0 against Anderlecht (1956) and Ipswich Town (1995).\n6. **Most Consecutive Away Wins**: 11 matches (2020-21).\n\nThese records showcase the team's rich history and success in English and European football.",
+    "IconicMemes": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRe8QVmRkgEvhqtnhMbtD2DJn5QKUMNdmTXUbVNCyQ0VI3OnNpUGMdpCZty0g&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTclloPy5Fqo_yIWCAmJmjr93jLnmN8ydj_JnUT8avBQNwElBJnPIgVH1XfZA&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqYkFV-v9EfP1vkjwG5oH_Ryju0e_MJ7j-wXo_BXk_plNDKHx2mqmBCZU_9mU&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ82ZNSgqcil5BQeopmrVwCTOljlx4aog-kDQRbZyqE0whw6AQUIczNjKfBCA&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtG-KnITmth7we-o6MLURZTWhJVua6urUoBDJPcDI6NgX9hPGkOOzkt3oFfg&s"
+    ],
+    "PopularSocialMediaReactions": [
+        "His immediate reaction was to leave the field and walk directly down the tunnel, expressing his displeasure with the decision. This reaction,...1 місяць тому",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVtfusmhITchMPZVVdDUSuBPPTvhVrhgJfv_sR25Gpnrz8U75Ei_-hQYsQcU8&s",
+        []
+    ],
+    "FanMadeContent": [
+        "https://www.youtube.com/shorts/vGdVLZw8oH4",
+        "https://www.youtube.com/watch?v=Tc0sqZBfBNU&pp=ygUiZmFuIG1hZGUgY29udGVudCBNYW5jaGVzdGVyIFVuaXRlZA%3D%3D",
+        "https://www.youtube.com/watch?v=zHj0cnklhvI&pp=ygUiZmFuIG1hZGUgY29udGVudCBNYW5jaGVzdGVyIFVuaXRlZA%3D%3D"
+    ]
+}

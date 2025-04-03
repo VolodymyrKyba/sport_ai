@@ -1,0 +1,114 @@
+{
+    "Name": "Real Madrid",
+    "Nickname": "Los Blancos, Los Merengues, La Casa Blanca",
+    "FoundingYear": "1902",
+    "Location": "Madrid",
+    "League_Division": [
+        "Spanish La Liga",
+        "Copa del Rey",
+        "UEFA Champions League",
+        "Supercopa de Espana",
+        "Club Friendlies",
+        "FIFA Club World Cup"
+    ],
+    "Stadium_VenueName": "Stadium Name: Estadio Santiago Bernabéu\nAddress: Avenida de Concha Espina 1, Chamartín\nCity: Madrid\nCapacity: 85454\nSurface: grass\nImage: https://media.api-sports.io/football/venues/1456.png",
+    "TeamColors": [
+        "#ffffff",
+        "#ffffff",
+        "#00529F"
+    ],
+    "Mascot": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuPr3MuTavbwcGozWqoVOTA48aMkwWd8cKNFxKrAoNEmBaCMkLpTiJPWxGRw&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnXMs5O5zaEJQa_H0heo7eUbQnoxdv8WWa2oCahplaWPrH4KHtbtUft5KkC9s&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDN_ULbIKVgCtl17B4RbgLBqtzW7k-P_mE6k3nTWL2W4v0OowwbjD5chsRPL8&s"
+    ],
+    "OfficialWebsite": "https://www.realmadrid.com",
+    "SocialMediaHandles": "https://www.facebook.com/realmadrid\nhttps://www.twitter.com/realmadrid\nhttps://instagram.com/realmadrid",
+    "MajorAchievements": "Real Madrid is one of the most successful teams in the world. Their major achievements include:\n\n* 26 La Liga titles\n* 14 European Cup/Champions League titles\n* 2 UEFA Cups\n* 1 UEFA Super Cup\n* 1 FIFA Club World Cup\n* 19 Copa del Rey titles\n\nThey are known as \"Los Blancos\" (The Whites) and are considered one of the greatest teams in football history.",
+    "HistoricalRivals": "Real Madrid's main historical rivals are:\n\n1. Barcelona (El Clásico)\n2. Atlético Madrid (Madrid Derby)\n3. Athletic Bilbao (Basque rivalry, although less intense)",
+    "Songs": [
+        "https://www.youtube.com/watch?v=AEB3MFaTuZI&pp=ygUQc29uZ3NSZWFsIE1hZHJpZA%3D%3D",
+        "https://www.youtube.com/watch?v=Yc-7IQqcqeM&pp=ygUQc29uZ3NSZWFsIE1hZHJpZA%3D%3D",
+        "https://www.youtube.com/watch?v=2-bF7bQcBlY&pp=ygUQc29uZ3NSZWFsIE1hZHJpZA%3D%3D"
+    ],
+    "Traditions": "Real Madrid is one of the most iconic and successful sports teams in the world. Here are the top 3 traditions of Real Madrid:\n\n1. **Wearing All-White Kits**: Real Madrid is famous for wearing all-white kits, which has been a tradition since the team's inception in 1902. The all-white color scheme is a symbol of the team's elegance, simplicity, and style. The team's iconic white kits have become synonymous with the brand and are recognized worldwide.\n\n2. **The Team Anthem**: The Real Madrid team anthem, \"Himno del Real Madrid,\" is a tradition that dates back to 1952. The anthem is played before each home match at the Santiago Bernabéu Stadium, and the players and fans sing along, creating an electric atmosphere. The anthem is a tribute to the team's history, values, and passion.\n\n3. **The Trophy Ceremony**: Real Madrid has a long tradition of celebrating their trophy wins with a ceremonial lap of honor around the Santiago Bernabéu Stadium. After winning a major trophy, the team takes a victory lap, holding the trophy aloft, and waving to the fans. This tradition is a way for the team to share their joy and gratitude with the fans and to showcase their achievement.\n\nThese traditions are an integral part of Real Madrid's identity and are deeply ingrained in the team's culture and history.",
+    "TV_RadioBroadcasters": [
+        "https://www.youtube.com/watch?v=f79eHfpMa_c&pp=ygUUYnJvYWRjYXN0UmVhbCBNYWRyaWQ%3D",
+        "https://www.youtube.com/watch?v=i6H3iz-2fQc&pp=ygUUYnJvYWRjYXN0UmVhbCBNYWRyaWQ%3D",
+        "https://www.youtube.com/watch?v=Pq_g9R_aqOM&pp=ygUUYnJvYWRjYXN0UmVhbCBNYWRyaWQ%3D"
+    ],
+    "Playing_Styles": "Real Madrid is known for their attacking and dominant playing style, often referred to as \"Tiki-Taka\" or \"Possession Football\". They typically:\n\n* Possess the ball for long periods, wearing down opponents\n* Use quick passing and movement to create scoring opportunities\n* Focus on individual skill and creativity, particularly from their star players\n* Apply high pressure on opponents to win the ball back quickly\n* Utilize their speedy wingers to make runs down the flanks and deliver crosses into the box.\n\nThis style has led to great success for the team, including numerous La Liga and Champions League titles.",
+    "HistoricalSignificance": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCsdu5S9RLzeG_jAIKwdndaNB8w5BuY52IMQ4iuxQu9oqyq9-ZFlwDAL_GAw&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqxTKDiA8K1ySzYjXnktpiiJrjZBYWZyxjbO4iyfd7QgjU_IYG9KhP70b9lXg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2ZZmgoOQzYzduOAHXz2dvmo8fEV-MukaF7Njhq0sB1Qkn4TJ3R6U9wYIjZg&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAlgTi9f5ndEAid-adq62DjHsCkBNjsIC5KODQ4kLRMfmPzHQct8S7wZbnIw&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOz5Tx3K0gpISnfPDL8TduZtxUuXzUobT9jD_ANskGXlBY6LpDFh16z3KQWA&s"
+    ],
+    "LegendaryPlayers": {
+        "Cristiano Ronaldo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2-SbpoRNCqCsyIJzxcQRwpRaANXpJv9dMpIi8zHxJEm0HjdeUJM3BlAkbocc&s",
+        "Zinedine Zidane": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDPdNyLcgR4k0lfvpVn8HYZByDKqqAxVC2HDvdzIa9nlUzk_OXvylmCyax_g&s",
+        "Raúl González": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDNeQ7oEVw-GylTaMjykDMdAeZ_XVvzPKGdbBK_b9JFqQp4bMaddxbW5Xy7A&s"
+    },
+    "Coaches_Managers": {
+        "Carlo Ancelotti": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEhlVyMZUGLG99k6QEPigdGmGfKrSONOEw86wLoCxoTUYjJu2sZmL3xX10tg&s",
+        "Zinedine Zidane": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDPdNyLcgR4k0lfvpVn8HYZByDKqqAxVC2HDvdzIa9nlUzk_OXvylmCyax_g&s",
+        "Jose Mourinho": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqtmUaPLM5AvAxthLv1nrHt2d9-SGndgyn-DVC2WnOb6ZrvYqLyG2UKf8Icg&s"
+    },
+    "CharitableInitiatives": "Real Madrid, one of the world's most successful football clubs, is also committed to giving back to the community. Some of their notable charitable initiatives include:\n\n* The Real Madrid Foundation, which supports disadvantaged children and promotes social integration through sports.\n* UNICEF partnership: Real Madrid has a long-standing partnership with UNICEF, supporting various global initiatives to improve children's health, education, and protection.\n* Charity matches and fundraising events to support various causes, such as cancer research, disability awareness, and natural disaster relief.\n* The \"Real Madrid Foundation's Social-Sports School\" program, which provides free football training and education to underprivileged children in Madrid.\n\nThese initiatives demonstrate Real Madrid's commitment to using their platform for social good and making a positive impact on the lives of people around the world.",
+    "PreGameRituals": [
+        "https://www.youtube.com/shorts/pkNe37fjYtI",
+        "https://www.youtube.com/shorts/fqS9nyDrxaI",
+        "https://www.youtube.com/watch?v=AsAeJnGWV38&pp=ygUbcHJlIGdhbWUgcml0dWFsc1JlYWwgTWFkcmlk"
+    ],
+    "RecentPerformance": "<h3>📅 Last 5 Matches:</h3><table border='1' style='width:100%; text-align:center;'><tr><th>Date</th><th>Home</th><th>Score</th><th>Away</th></tr><tr><td>2025-04-01</td><td>Real Madrid</td><td>4-4</td><td>Real Sociedad</td></tr><tr><td>2025-03-29</td><td>Real Madrid</td><td>3-2</td><td>Leganes</td></tr><tr><td>2025-03-09</td><td>Real Madrid</td><td>2-1</td><td>Vallecano</td></tr><tr><td>2025-03-04</td><td>Real Madrid</td><td>2-1</td><td>Atletico Madrid</td></tr><tr><td>2025-02-23</td><td>Real Madrid</td><td>2-0</td><td>Girona</td></tr></table>",
+    "HistoricalStatistics": "Real Madrid is one of the most successful and storied football clubs in the world. Here are some historical statistics about the team:\n\n**Domestic Competitions:**\n\n1. **La Liga:** Real Madrid has won the Spanish league title a record 35 times, with their first title coming in 1932 and their most recent in 2020.\n2. **Copa del Rey:** The club has won the Spanish cup a record 19 times, with their first title coming in 1905 and their most recent in 2020.\n3. **Supercopa de España:** Real Madrid has won the Spanish super cup a record 12 times, with their first title coming in 1988 and their most recent in 2020.\n\n**International Competitions:**\n\n1. **European Cup/UEFA Champions League:** Real Madrid has won the European Cup/UEFA Champions League a record 13 times, with their first title coming in 1956 and their most recent in 2018.\n2. **UEFA Super Cup:** The club has won the UEFA Super Cup a record 2 times, with their first title coming in 2002 and their most recent in 2014.\n3. **FIFA Club World Cup:** Real Madrid has won the FIFA Club World Cup a record 4 times, with their first title coming in 2014 and their most recent in 2018.\n\n**Team Records:**\n\n1. **Most appearances:** The record for most appearances for Real Madrid is held by Iker Casillas, who played 725 games for the club between 1999 and 2015.\n2. **Most goals:** The record for most goals scored for Real Madrid is held by Cristiano Ronaldo, who scored 450 goals for the club between 2009 and 2018.\n3. **Most wins:** The record for most wins as a manager of Real Madrid is held by Carlo Ancelotti, who won 217 games out of 328 between 2013 and 2015.\n\n**Player Records:**\n\n1. **Top scorers:**\n\t* Cristiano Ronaldo (2009-2018): 450 goals\n\t* Karim Benzema (2009-present): 324 goals\n\t* Raúl González (1994-2010): 323 goals\n2. **Most assists:**\n\t* Cristiano Ronaldo (2009-2018): 131 assists\n\t* Luka Modrić (2012-present): 91 assists\n\t* Toni Kroos (2014-present): 85 assists\n\n**Club Records:**\n\n1. **Longest unbeaten run:** Real Madrid's longest unbeaten run is 40 games, set in the 2015-2016 season.\n2. **Most goals scored in a season:** Real Madrid's record for most goals scored in a season is 121, set in the 2013-2014 season.\n3. **Most consecutive league titles:** Real Madrid's record for most consecutive league titles is 5, set between 1960 and 1965.\n\nThese statistics demonstrate the rich history and success of Real Madrid, both domestically and internationally.",
+    "PlayerGoals": [
+        "https://www.youtube.com/watch?v=6J46_RngINc&pp=ygUhdG9wIGdvYWxzIGFuZCBtb21lbnRzIFJlYWwgTWFkcmlk",
+        "https://www.youtube.com/watch?v=X_sKsroZN_s&pp=ygUhdG9wIGdvYWxzIGFuZCBtb21lbnRzIFJlYWwgTWFkcmlk",
+        "https://www.youtube.com/watch?v=rBz25ywcvsw&pp=ygUhdG9wIGdvYWxzIGFuZCBtb21lbnRzIFJlYWwgTWFkcmlk"
+    ],
+    "PlayerAssists": "Error: ",
+    "PlayerFoulsDrawn": "Error: ",
+    "SpecialEvents": "<h3>📅 Last 5 Matches:</h3><table border='1' style='width:100%; text-align:center;'><tr><th>Date</th><th>Home</th><th>Score</th><th>Away</th></tr><tr><td>2025-04-01</td><td>Real Madrid</td><td>4-4</td><td>Real Sociedad</td></tr><tr><td>2025-03-29</td><td>Real Madrid</td><td>3-2</td><td>Leganes</td></tr><tr><td>2025-03-09</td><td>Real Madrid</td><td>2-1</td><td>Vallecano</td></tr><tr><td>2025-03-04</td><td>Real Madrid</td><td>2-1</td><td>Atletico Madrid</td></tr><tr><td>2025-02-23</td><td>Real Madrid</td><td>2-0</td><td>Girona</td></tr></table>",
+    "FamousFans": "Some famous fans of Real Madrid include:\n1. Enrique Iglesias\n2. Rafael Nadal\n3. Shakira \n4. David Beckham",
+    "PreferredFormation": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIJlAWmvqqCcu0dwRNaRhxwsQhGZ0PG4o9kxkSP3r3tdWLMI-GTChnzR1EBw&s",
+    "SetPieceTactics": "Real Madrid's set piece tactics often involve:\n\n1. **_corner kicks**: They usually use a mix of short and long corners, with players like Luka Modrić and Toni Kroos delivering precise crosses.\n2. **free kicks**: Players like Kroos and Eden Hazard take direct shots or deliver crosses into the box.\n3. **throw-ins**: They often use quick throw-ins to catch opponents off guard and create counter-attacking opportunities.\n4. **long throws**: Goalkeeper Thibaut Courtois sometimes takes long throws to quickly transition the ball to the opponent's half.\n\nThese tactics are subject to change based on the team's current strategy and players' strengths.",
+    "CurrentHeadCoach_Manager": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3tInS1FK2_2CpCZFloWt49FFbQmMJpk5UccOrf_PPqAnxPWlDcxRqh8FJfw&s",
+    "EstimatedTeamValue": "$5.5 Billion",
+    "MajorSponsors": "Some of the major sponsors of Real Madrid include:\n\n1. Adidas\n2. Emirates\n3. Microsoft \n\nNote: This list is subject to change, and sponsorship deals may vary from season to season.",
+    "TicketPrices": [
+        {
+            "title": "Real Madrid vs Valencia CF",
+            "date": "Sat Apr 5 9:15 AM",
+            "location": "Estadio Santiago Bernabeu - Madrid,",
+            "link": "https://www.ticketsonsale.com/tickets/real-madrid-vs-valencia-cf-estadio-santiago-bernabeu-madrid-4-5-2025-5045919"
+        },
+        {
+            "title": "UEFA Champions League Quarterfinals - Arsenal FC vs Real Madrid",
+            "date": "Tue Apr 8 9:00 PM",
+            "location": "Emirates Stadium - London,",
+            "link": "https://www.ticketsonsale.com/tickets/uefa-champions-league-quarterfinals-arsenal-fc-vs-real-madrid-emirates-stadium-london-4-8-2025-5630954"
+        },
+        {
+            "title": "Deportivo Alaves vs Real Madrid",
+            "date": "Sun Apr 13 4:15 PM",
+            "location": "Mendizorrotza Stadium - Araba,",
+            "link": "https://www.ticketsonsale.com/tickets/deportivo-alaves-vs-real-madrid-mendizorrotza-stadium-araba-4-13-2025-5142954"
+        }
+    ],
+    "AttendanceRecords": "As of my knowledge cutoff in 2023, here are the attendance records for Real Madrid:\n\n1. **Highest attendance**: 83,329 (average attendance per game at the Santiago Bernabéu Stadium)\n2. **Record attendance in a single match**: 121,000 (vs. AC Milan in the 1956 European Cup)\n3. **Average attendance in the 2022-2023 season**: 59,544 (La Liga matches)\n\nPlease note that these figures may have changed since my knowledge cutoff date.",
+    "RecordsAndMilestones": "Real Madrid is one of the most successful football teams in the world. Here are some of their notable records and milestones:\n\n1. **Most European Cup/Champions League titles**: 14\n2. **Most La Liga titles**: 35\n3. **Most consecutive La Liga titles**: 5 (1960-1965 and 2000-2005)\n4. **Most Spanish Cup titles**: 20\n5. **Most international trophies**: 26\n6. **Longest unbeaten run in La Liga**: 40 matches (2015-2016)\n7. **Highest score in a single La Liga season**: 100 points (2011-2012)\n8. **Most goals scored in a single La Liga season**: 121 (2013-2014)\n\nSome notable player records include:\n\n1. **All-time leading scorer**: Cristiano Ronaldo (450 goals)\n2. **Most appearances**: Iker Casillas (725 appearances)\n3. **Most La Liga titles won by a player**: Francisco Gento (12 titles)",
+    "IconicMemes": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaxSktpFwBPjjFzS9ouH02TCsS3O-2KnNtoTeUi6vV-CeRvzizHOiktQLR8aA&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdR-iQWOdfGcODEizj10FJjShWd1lDeqczFN2XC9H5g7EqdnjY_Z2EigGd_g&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO77m4qpcm49xMROZiljLrsuAVaKG28_Xo9LtGSpHvDrKu_UbZrrbm-Gr7zQ&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRNeOj_szSZ4r6OtAAj7J38qxs7d3syrDMhIeLlyeszjsXrDFOuIN8NhTJ7X0&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGQl6b5wc2Ae2qHn71MBixoM6GeBEBhPDR4AUTHaq9gm_35QTVxrhSLoUxOA&s"
+    ],
+    "PopularSocialMediaReactions": [
+        "BBC Sport asks Liverpool fans what they think amid a huge online reaction to Trent Alexander-Arnold's potential move to Real Madrid.1 тиждень тому",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDlaoEcsj8I5TS3QXWL-nGTVfSeL_Kx9CcC5q_WWsVLuMtZtAYNVNRXTB9d0o&s",
+        []
+    ]
+}

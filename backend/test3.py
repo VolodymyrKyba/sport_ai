@@ -253,15 +253,10 @@ def Songs(t_n):
         "q": query,
         "tbm": "vid"  
     }
-
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-    }
-
-    response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
+    response = requests.get("https://www.google.com/search", params=params,timeout=30)
 
     if "detected unusual traffic" in response.text.lower():
-        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
+        print("Google blocked your request")
     else:
         soup = bs(response.text, "html.parser")
 
@@ -313,7 +308,7 @@ def TV_RadioBroadcasters(t_n):
     response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
 
     if "detected unusual traffic" in response.text.lower():
-        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
+        print("Google blocked your request")
     else:
         soup = bs(response.text, "html.parser")
 
@@ -478,7 +473,7 @@ def PreGameRituals(t_n):
     response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
 
     if "detected unusual traffic" in response.text.lower():
-        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
+        print("Google blocked your request")
     else:
         soup = bs(response.text, "html.parser")
 
@@ -559,7 +554,7 @@ def PlayerGoals(t_n):
     response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
 
     if "detected unusual traffic" in response.text.lower():
-        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
+        print("Google blocked your request")
     else:
         soup = bs(response.text, "html.parser")
 
@@ -910,7 +905,7 @@ def FanMadeContent(t_n):
     response = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
 
     if "detected unusual traffic" in response.text.lower():
-        print("⚠ Google заблокував запит. Спробуйте VPN або API.")
+        print("Google blocked your request")
     else:
         soup = bs(response.text, "html.parser")
 

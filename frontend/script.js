@@ -27,42 +27,54 @@ document.addEventListener("DOMContentLoaded", function () {
         for (const [key, value] of Object.entries(info)) {
           const block = document.createElement("div");
           block.className = "section";
-          block.style.marginBottom = "30px"; // відступ між блоками
+          block.style.marginBottom = "30px";
           block.style.padding = "10px";
           block.style.borderBottom = "1px solid #ccc";
+          block.style.textAlign = "center"; // Центруємо все в блоці
 
           const title = document.createElement("h3");
           title.textContent = key;
+          title.style.textAlign = "center"; // Центруємо заголовок
           block.appendChild(title);
 
           if (typeof value === "string") {
             if (value.startsWith("<")) {
-              // HTML таблиця
               const div = document.createElement("div");
               div.innerHTML = value;
+              div.style.display = "inline-block"; // Щоб таблиця була по центру
               block.appendChild(div);
             } else if (value.startsWith("http")) {
               const link = document.createElement("a");
               link.href = value;
               link.target = "_blank";
               link.textContent = value;
+              link.style.display = "block";
+              link.style.margin = "10px auto";
               block.appendChild(link);
             } else {
               const text = document.createElement("p");
               text.textContent = value;
+              text.style.textAlign = "center";
               block.appendChild(text);
             }
           } else if (Array.isArray(value)) {
             if (value.length && value[0].startsWith("http")) {
               value.forEach((url) => {
                 if (url.includes("youtube")) {
-                  const iframe = document.createElement("iframe");
-                  iframe.width = "300";
-                  iframe.height = "170";
-                  iframe.src = url.replace("watch?v=", "embed/");
-                  iframe.frameBorder = "0";
-                  iframe.allowFullscreen = true;
-                  block.appendChild(iframe);
+                  const videoId = url.split("v=")[1]?.split("&")[0];
+                  if (videoId) {
+                    const iframe = document.createElement("iframe");
+                    iframe.width = "300";
+                    iframe.height = "170";
+                    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+                    iframe.frameBorder = "0";
+                    iframe.allow =
+                      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                    iframe.allowFullscreen = true;
+                    iframe.style.margin = "10px auto";
+                    iframe.style.display = "block";
+                    block.appendChild(iframe);
+                  }
                 } else {
                   const img = document.createElement("img");
                   img.src = url;
@@ -74,6 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
               });
             } else {
               const ul = document.createElement("ul");
+              ul.style.display = "inline-block";
+              ul.style.textAlign = "left";
               value.forEach((v) => {
                 const li = document.createElement("li");
                 li.textContent = v;
